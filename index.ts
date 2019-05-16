@@ -48,7 +48,7 @@ export function getFakeLogger (config: DeepReadonly<LoggerConfigContract>) {
     },
   })
 
-  return new FakeLogger(config, getPino(cloned))
+  return new FakeLogger(cloned, getPino(cloned))
 }
 
 export { LoggerContract }
