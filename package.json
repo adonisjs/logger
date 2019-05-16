@@ -2,6 +2,13 @@
   "name": "@poppinss/logger",
   "version": "0.0.0",
   "description": "Logger built on top of pino to be used by AdonisJs",
+  "main": "build/index.js",
+  "files": [
+    "adonis-typings.d.ts",
+    "build/src",
+    "build/index.d.ts",
+    "build/index.js"
+  ],
   "scripts": {
     "mrm": "mrm --preset=@adonisjs/mrm-preset",
     "pretest": "npm run lint",
@@ -9,7 +16,7 @@
     "lint": "tslint --project tsconfig.json",
     "clean": "del build",
     "compile": "npm run lint && npm run clean && tsc",
-    "build": "npm run compile && typedoc --excludePrivate && git add docs",
+    "build": "npm run compile && typedoc --theme markdown --excludePrivate --mdHideSources && git add docs",
     "commit": "git-cz",
     "release": "np",
     "version": "npm run build"
@@ -39,6 +46,7 @@
     "tslint-eslint-rules": "^5.4.0",
     "typedoc": "^0.14.2",
     "typedoc-plugin-external-module-name": "^2.1.0",
+    "typedoc-plugin-markdown": "^1.2.1",
     "typescript": "^3.4.5"
   },
   "nyc": {
@@ -49,12 +57,6 @@
       ".ts"
     ]
   },
-  "main": "build/index.js",
-  "files": [
-    "build/src",
-    "build/index.d.ts",
-    "build/index.js"
-  ],
   "husky": {
     "hooks": {
       "pre-commit": "doctoc README.md --title='## Table of contents' && git add README.md",
