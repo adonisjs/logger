@@ -7,10 +7,11 @@
 * file that was distributed with this source code.
 */
 
+/// <reference path="./src/contracts.ts" />
+
 declare module '@ioc:Adonis/Src/Logger' {
-  /// <reference path="./src/contracts.ts" />
   import { LoggerContract as BaseContract } from '@poppinss/logger/contracts'
-  interface LoggerContract extends BaseContract {}
+  export interface LoggerContract extends BaseContract {}
 
   const Logger: LoggerContract
   export default Logger
