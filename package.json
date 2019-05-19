@@ -1,6 +1,6 @@
 {
   "name": "@poppinss/logger",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Logger built on top of pino to be used by AdonisJs",
   "main": "build/index.js",
   "files": [
