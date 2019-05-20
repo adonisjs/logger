@@ -7,7 +7,7 @@
 * file that was distributed with this source code.
 */
 
-/// <reference path="./src/contracts.ts" />
+/// <reference path="../src/contracts.ts" />
 
 declare module '@ioc:Adonis/Src/Logger' {
   import { LoggerContract as BaseContract } from '@poppinss/logger/contracts'
