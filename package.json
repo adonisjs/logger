@@ -30,7 +30,7 @@
   "author": "virk,poppinss",
   "license": "MIT",
   "devDependencies": {
-    "@adonisjs/mrm-preset": "^2.0.2",
+    "@adonisjs/mrm-preset": "^2.0.3",
     "@types/node": "^12.0.2",
     "commitizen": "^3.1.1",
     "cz-conventional-changelog": "^2.1.0",
@@ -38,8 +38,8 @@
     "doctoc": "^1.4.0",
     "husky": "^2.3.0",
     "japa": "^2.0.10",
-    "mrm": "^1.2.1",
-    "np": "^5.0.1",
+    "mrm": "^1.2.2",
+    "np": "^5.0.2",
     "ts-node": "^8.1.0",
     "tslint": "^5.16.0",
     "tslint-eslint-rules": "^5.4.0",
@@ -73,7 +73,7 @@
   },
   "dependencies": {
     "@types/pino": "^5.8.7",
-    "pino": "^5.12.4",
+    "pino": "^5.12.5",
     "ts-essentials": "^2.0.7"
   },
   "directories": {
