@@ -10,8 +10,10 @@
 /// <reference path="../src/contracts.ts" />
 
 declare module '@ioc:Adonis/Src/Logger' {
-  import { LoggerContract as BaseContract } from '@poppinss/logger/contracts'
+  import { LoggerContract as BaseContract, LoggerConfigContract } from '@poppinss/logger/contracts'
+
   export interface LoggerContract extends BaseContract {}
+  export { LoggerConfigContract }
 
   const Logger: LoggerContract
   export default Logger
