@@ -4,7 +4,6 @@
   "description": "Logger built on top of pino to be used by AdonisJs",
   "main": "build/index.js",
   "files": [
-    "build/adonis-typings/index.d.ts",
     "build/src",
     "build/index.d.ts",
     "build/index.js"

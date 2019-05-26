@@ -11,11 +11,9 @@
 * file that was distributed with this source code.
 */
 
-/// <reference path="./contracts.ts" />
-
 import * as Pino from 'pino'
 import { DeepReadonly } from 'ts-essentials'
-import { LoggerConfigContract, LoggerContract } from '@poppinss/logger/contracts'
+import { LoggerConfigContract, LoggerContract } from './contracts'
 
 /**
  * Logger class built on top of pino with couple of changes in
