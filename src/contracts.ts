@@ -28,7 +28,7 @@ export type LoggerConfigContract = {
   name: string,
   level: Level | 'silent' | string,
   enabled: boolean,
-  messageKey: string,
+  messageKey?: string,
   safe?: boolean,
   crlf?: boolean,
   useLevelLabels?: boolean,
