@@ -11,7 +11,7 @@
 
 import * as test from 'japa'
 import { Writable } from 'stream'
-import { getLogger, getFakeLogger } from '../index'
+import { Logger, FakeLogger } from '../index'
 
 function getFakeStream (fn: ((line: string) => boolean)) {
   const stream = new Writable()
@@ -23,7 +23,7 @@ test.group('Logger', () => {
   test('log message at all log levels', (assert) => {
     const messages: string[] = []
 
-    const logger = getLogger({
+    const logger = new Logger({
       name: 'adonis-logger',
       level: 'trace',
       messageKey: 'msg',
@@ -73,7 +73,7 @@ test.group('Logger', () => {
   })
 
   test('return current log level', (assert) => {
-    const logger = getLogger({
+    const logger = new Logger({
       name: 'adonis-logger',
       level: 'trace',
       messageKey: 'msg',
@@ -86,7 +86,7 @@ test.group('Logger', () => {
   test('do not log below the set level', (assert) => {
     const messages: string[] = []
 
-    const logger = getLogger({
+    const logger = new Logger({
       name: 'adonis-logger',
       level: 'info',
       messageKey: 'msg',
@@ -130,7 +130,7 @@ test.group('Logger', () => {
   test('change level for a child logger', (assert) => {
     const messages: string[] = []
 
-    const logger = getLogger({
+    const logger = new Logger({
       name: 'adonis-logger',
       level: 'info',
       messageKey: 'msg',
@@ -182,7 +182,7 @@ test.group('Logger', () => {
   })
 
   test('log using fake logger', (assert) => {
-    const logger = getFakeLogger({
+    const logger = new FakeLogger({
       name: 'adonis-logger',
       level: 'info',
       messageKey: 'msg',
@@ -201,7 +201,7 @@ test.group('Logger', () => {
   })
 
   test('log using fake child logger', (assert) => {
-    const logger = getFakeLogger({
+    const logger = new FakeLogger({
       name: 'adonis-logger',
       level: 'info',
       messageKey: 'msg',
@@ -222,7 +222,7 @@ test.group('Logger', () => {
   })
 
   test('clear logs', (assert) => {
-    const logger = getFakeLogger({
+    const logger = new FakeLogger({
       name: 'adonis-logger',
       level: 'info',
       messageKey: 'msg',

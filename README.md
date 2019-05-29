@@ -41,8 +41,8 @@ yarn add @poppinss/logger
 and then use it as follows
 
 ```ts
-import { getLogger } from '@poppinss/logger'
-const logger = getLogger({
+import { Logger } from '@poppinss/logger'
+const logger = new Logger({
   enabled: true,
   name: 'adonis-logger',
   messageKey: 'msg',
@@ -89,7 +89,7 @@ getLogger({
 ## Fake logger
 Many times you would want to test whether your code is logging certain messages or not. One way is to hijack the `stdout` stream and read the rows text from it.
 
-Instead, we ship with a proper `fakeLogger` that you can use during tests.
+Instead, we ship with a proper `FakeLogger` that you can use during tests.
 
 ```ts
 export class MyApp {
@@ -106,10 +106,10 @@ export class MyApp {
 Inside your tests
 
 ```ts
-import { fakeLogger } from '@poppinss/logger'
+import { FakeLogger } from '@poppinss/logger'
 import { MyApp } from './MyApp'
 
-const logger = fakeLogger({
+const logger = new FakeLogger({
   // config
 })
 
@@ -118,6 +118,9 @@ app.perform()
 
 assert.equal(logger.logs[0].msg, 'created app')
 assert.equal(logger.logs[0].level, 20)
+
+// Exists on fake logger only
+logger.clear()
 ```
 
 > The fake logger works seamless with the child logger as well. The root logger will collect all the logs from nested child loggers.

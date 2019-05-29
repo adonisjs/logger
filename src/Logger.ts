@@ -14,6 +14,7 @@
 import * as Pino from 'pino'
 import { DeepReadonly } from 'ts-essentials'
 import { LoggerConfigContract, LoggerContract } from './contracts'
+import { getPino } from './getPino'
 
 /**
  * Logger class built on top of pino with couple of changes in
@@ -21,10 +22,14 @@ import { LoggerConfigContract, LoggerContract } from './contracts'
  * object using `logger.pino`.
  */
 export class Logger implements LoggerContract {
+  public pino: Pino.Logger
+
   constructor (
     protected $config: DeepReadonly<LoggerConfigContract>,
-    public pino: Pino.Logger,
-  ) {}
+    pino?: Pino.Logger,
+  ) {
+    this.pino = pino || getPino(this.$config)
+  }
 
   /**
    * A map of levels

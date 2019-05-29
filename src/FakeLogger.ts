@@ -11,14 +11,38 @@
 * file that was distributed with this source code.
 */
 
-import { Level, SerializerFn } from 'pino'
+import * as Pino from 'pino'
+import { DeepReadonly } from 'ts-essentials'
 import { Logger } from './Logger'
+import { LoggerConfigContract } from './contracts'
 
 /**
  * Fake logger that sets a custom logger stream and returns
  * the log messages as an array vs writing them to `stdout`.
  */
 export class FakeLogger extends Logger {
+  constructor (config: DeepReadonly<LoggerConfigContract>, pino?: Pino.Logger) {
+    /**
+     * Config is only used when we are not receiving an
+     * existing instance of pino.
+     */
+    if (!pino) {
+      const cloned = Object.assign({}, config, {
+        stream: {
+          logs: [],
+          write: function writer (line: string) {
+            const log = JSON.parse(line)
+            delete log.timestamp
+            this.logs.push(log)
+          },
+        },
+      })
+      super(cloned)
+    } else {
+      super(config, pino)
+    }
+  }
+
   /**
    * An array of in-memory logs
    */
@@ -31,8 +55,8 @@ export class FakeLogger extends Logger {
    * are writte to the same top level stream
    */
   public child (bindings: {
-    level?: Level | string,
-    serializers?: { [key: string]: SerializerFn },
+    level?: Pino.Level | string,
+    serializers?: { [key: string]: Pino.SerializerFn },
     [key: string]: any,
   }) {
     return new FakeLogger(this.$config, this.pino.child(bindings))
