@@ -3,7 +3,7 @@
 </div>
 
 # Logger
-[![circleci-image]][circleci-url] [![npm-image]][npm-url] ![](https://img.shields.io/badge/Typescript-294E80.svg?style=for-the-badge&logo=typescript)
+[![circleci-image]][circleci-url] [![npm-image]][npm-url] ![][typescript-image] [![license-image]][license-url]
 
 Extremely fast JSON logger built on top of [pino](http://getpino.io). The module does handful of modifications to the config of pino and also exposes a fake logger to be used during tests.
 
