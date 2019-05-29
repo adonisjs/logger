@@ -1,144 +1,78 @@
-[@poppinss/logger](../README.md) > [@poppinss/logger](../modules/_poppinss_logger.md) > [Logger](../classes/_poppinss_logger.logger.md)
+[@poppinss/logger](../README.md) > [@poppinss/logger](../modules/_poppinss_logger.md) > [LoggerContract](../interfaces/_poppinss_logger.loggercontract.md)
 
-# Class: Logger
+# Interface: LoggerContract
 
-Logger class built on top of pino with couple of changes in the configuration. You can access the underlying `pino` object using `logger.pino`.
+Logger interface that main and fake logger implements
 
 ## Hierarchy
 
-**Logger**
+**LoggerContract**
 
-↳  [FakeLogger](_poppinss_logger.fakelogger.md)
+## Implemented by
 
-## Implements
-
-* [LoggerContract](../interfaces/_poppinss_logger.loggercontract.md)
+* [FakeLogger](../classes/_poppinss_logger.fakelogger.md)
+* [Logger](../classes/_poppinss_logger.logger.md)
 
 ## Index
 
-### Constructors
-
-* [constructor](_poppinss_logger.logger.md#constructor)
-
 ### Properties
 
-* [$config](_poppinss_logger.logger.md#_config)
-* [pino](_poppinss_logger.logger.md#pino)
-
-### Accessors
-
-* [LOG_VERSION](_poppinss_logger.logger.md#log_version)
-* [level](_poppinss_logger.logger.md#level)
-* [levelNumber](_poppinss_logger.logger.md#levelnumber)
-* [levels](_poppinss_logger.logger.md#levels)
-* [pinoVersion](_poppinss_logger.logger.md#pinoversion)
+* [LOG_VERSION](_poppinss_logger.loggercontract.md#log_version)
+* [level](_poppinss_logger.loggercontract.md#level)
+* [levelNumber](_poppinss_logger.loggercontract.md#levelnumber)
+* [levels](_poppinss_logger.loggercontract.md#levels)
+* [pinoVersion](_poppinss_logger.loggercontract.md#pinoversion)
 
 ### Methods
 
-* [bindings](_poppinss_logger.logger.md#bindings)
-* [child](_poppinss_logger.logger.md#child)
-* [debug](_poppinss_logger.logger.md#debug)
-* [error](_poppinss_logger.logger.md#error)
-* [fatal](_poppinss_logger.logger.md#fatal)
-* [info](_poppinss_logger.logger.md#info)
-* [isLevelEnabled](_poppinss_logger.logger.md#islevelenabled)
-* [log](_poppinss_logger.logger.md#log)
-* [trace](_poppinss_logger.logger.md#trace)
-* [warn](_poppinss_logger.logger.md#warn)
+* [bindings](_poppinss_logger.loggercontract.md#bindings)
+* [child](_poppinss_logger.loggercontract.md#child)
+* [debug](_poppinss_logger.loggercontract.md#debug)
+* [error](_poppinss_logger.loggercontract.md#error)
+* [fatal](_poppinss_logger.loggercontract.md#fatal)
+* [info](_poppinss_logger.loggercontract.md#info)
+* [isLevelEnabled](_poppinss_logger.loggercontract.md#islevelenabled)
+* [log](_poppinss_logger.loggercontract.md#log)
+* [trace](_poppinss_logger.loggercontract.md#trace)
+* [warn](_poppinss_logger.loggercontract.md#warn)
 
 ---
 
-## Constructors
-
-<a id="constructor"></a>
-
-###  constructor
-
-⊕ **new Logger**($config: *`DeepReadonly`<[LoggerConfigContract](../modules/_poppinss_logger.md#loggerconfigcontract)>*, pino?: *`Pino.Logger`*): [Logger](_poppinss_logger.logger.md)
-
-**Parameters:**
-
-| Name | Type |
-| ------ | ------ |
-| $config | `DeepReadonly`<[LoggerConfigContract](../modules/_poppinss_logger.md#loggerconfigcontract)> |
-| `Optional` pino | `Pino.Logger` |
-
-**Returns:** [Logger](_poppinss_logger.logger.md)
-
-___
-
 ## Properties
-
-<a id="_config"></a>
-
-### `<Protected>` $config
-
-**● $config**: *`DeepReadonly`<[LoggerConfigContract](../modules/_poppinss_logger.md#loggerconfigcontract)>*
-
-___
-<a id="pino"></a>
-
-###  pino
-
-**● pino**: *`Pino.Logger`*
-
-___
-
-## Accessors
 
 <a id="log_version"></a>
 
 ###  LOG_VERSION
 
-**get LOG_VERSION**(): `number`
-
-Returns the log formatting version
-
-**Returns:** `number`
+**● LOG_VERSION**: *`number`*
 
 ___
 <a id="level"></a>
 
 ###  level
 
-**get level**(): `string`
-
-Returns the current logger level
-
-**Returns:** `string`
+**● level**: *`string`*
 
 ___
 <a id="levelnumber"></a>
 
 ###  levelNumber
 
-**get levelNumber**(): `number`
-
-Returns the current logger level number
-
-**Returns:** `number`
+**● levelNumber**: *`number`*
 
 ___
 <a id="levels"></a>
 
 ###  levels
 
-**get levels**(): `Pino.LevelMapping`
-
-A map of levels
-
-**Returns:** `Pino.LevelMapping`
+**● levels**: *`LevelMapping`*
 
 ___
 <a id="pinoversion"></a>
 
 ###  pinoVersion
 
-**get pinoVersion**(): `string`
-
-Returns the pino version
-
-**Returns:** `string`
+**● pinoVersion**: *`string`*
 
 ___
 
@@ -150,8 +84,6 @@ ___
 
 ▸ **bindings**(): `object`
 
-Returns default bindings for the logger
-
 **Returns:** `object`
 
 ___
@@ -159,9 +91,7 @@ ___
 
 ###  child
 
-▸ **child**(bindings: *`object`*): [Logger](_poppinss_logger.logger.md)
-
-Returns a child logger instance
+▸ **child**(bindings: *`object`*): [LoggerContract](_poppinss_logger.loggercontract.md)
 
 **Parameters:**
 
@@ -169,7 +99,7 @@ Returns a child logger instance
 | ------ | ------ |
 | bindings | `object` |
 
-**Returns:** [Logger](_poppinss_logger.logger.md)
+**Returns:** [LoggerContract](_poppinss_logger.loggercontract.md)
 
 ___
 <a id="debug"></a>
@@ -179,8 +109,6 @@ ___
 ▸ **debug**(message: *`string`*, ...values: *`any`[]*): `void`
 
 ▸ **debug**(mergingObject: *`any`*, message: *`string`*, ...values: *`any`[]*): `void`
-
-Log message at debug level
 
 **Parameters:**
 
@@ -210,8 +138,6 @@ ___
 
 ▸ **error**(mergingObject: *`any`*, message: *`string`*, ...values: *`any`[]*): `void`
 
-Log message at error level
-
 **Parameters:**
 
 | Name | Type |
@@ -239,8 +165,6 @@ ___
 ▸ **fatal**(message: *`string`*, ...values: *`any`[]*): `void`
 
 ▸ **fatal**(mergingObject: *`any`*, message: *`string`*, ...values: *`any`[]*): `void`
-
-Log message at fatal level
 
 **Parameters:**
 
@@ -270,8 +194,6 @@ ___
 
 ▸ **info**(mergingObject: *`any`*, message: *`string`*, ...values: *`any`[]*): `void`
 
-Log message at info level
-
 **Parameters:**
 
 | Name | Type |
@@ -298,8 +220,6 @@ ___
 
 ▸ **isLevelEnabled**(level: *`string`*): `boolean`
 
-Returns a boolean telling if level is enabled or not.
-
 **Parameters:**
 
 | Name | Type |
@@ -316,8 +236,6 @@ ___
 ▸ **log**(level: *`string`*, message: *`string`*, ...values: *`any`[]*): `void`
 
 ▸ **log**(level: *`string`*, mergingObject: *`any`*, message: *`string`*, ...values: *`any`[]*): `void`
-
-Log message for any named level
 
 **Parameters:**
 
@@ -349,8 +267,6 @@ ___
 
 ▸ **trace**(mergingObject: *`any`*, message: *`string`*, ...values: *`any`[]*): `void`
 
-Log message at trace level
-
 **Parameters:**
 
 | Name | Type |
@@ -378,8 +294,6 @@ ___
 ▸ **warn**(message: *`string`*, ...values: *`any`[]*): `void`
 
 ▸ **warn**(mergingObject: *`any`*, message: *`string`*, ...values: *`any`[]*): `void`
-
-Log message at warn level
 
 **Parameters:**
 

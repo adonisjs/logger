@@ -12,7 +12,7 @@ Fake logger that sets a custom logger stream and returns the log messages as an 
 
 ## Implements
 
-* `LoggerContract`
+* [LoggerContract](../interfaces/_poppinss_logger.loggercontract.md)
 
 ## Index
 
@@ -56,14 +56,14 @@ Fake logger that sets a custom logger stream and returns the log messages as an 
 
 ###  constructor
 
-⊕ **new FakeLogger**($config: *`DeepReadonly`<`LoggerConfigContract`>*, pino: *`Pino.Logger`*): [FakeLogger](_poppinss_logger.fakelogger.md)
+⊕ **new FakeLogger**(config: *`DeepReadonly`<[LoggerConfigContract](../modules/_poppinss_logger.md#loggerconfigcontract)>*, pino?: *`Pino.Logger`*): [FakeLogger](_poppinss_logger.fakelogger.md)
 
 **Parameters:**
 
 | Name | Type |
 | ------ | ------ |
-| $config | `DeepReadonly`<`LoggerConfigContract`> |
-| pino | `Pino.Logger` |
+| config | `DeepReadonly`<[LoggerConfigContract](../modules/_poppinss_logger.md#loggerconfigcontract)> |
+| `Optional` pino | `Pino.Logger` |
 
 **Returns:** [FakeLogger](_poppinss_logger.fakelogger.md)
 
@@ -75,7 +75,7 @@ ___
 
 ### `<Protected>` $config
 
-**● $config**: *`DeepReadonly`<`LoggerConfigContract`>*
+**● $config**: *`DeepReadonly`<[LoggerConfigContract](../modules/_poppinss_logger.md#loggerconfigcontract)>*
 
 ___
 <a id="pino"></a>

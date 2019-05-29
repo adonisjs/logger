@@ -9,47 +9,51 @@
 * [FakeLogger](../classes/_poppinss_logger.fakelogger.md)
 * [Logger](../classes/_poppinss_logger.logger.md)
 
+### Interfaces
+
+* [LoggerContract](../interfaces/_poppinss_logger.loggercontract.md)
+
+### Type aliases
+
+* [LoggerConfigContract](_poppinss_logger.md#loggerconfigcontract)
+
 ### Functions
 
-* [getFakeLogger](_poppinss_logger.md#getfakelogger)
-* [getLogger](_poppinss_logger.md#getlogger)
+* [getPino](_poppinss_logger.md#getpino)
 
 ---
 
-## Functions
+## Type aliases
 
-<a id="getfakelogger"></a>
+<a id="loggerconfigcontract"></a>
 
-###  getFakeLogger
+###  LoggerConfigContract
 
-▸ **getFakeLogger**(config: *`DeepReadonly`<`LoggerConfigContract`>*): [FakeLogger](../classes/_poppinss_logger.fakelogger.md)
+**Ƭ LoggerConfigContract**: *`object`*
 
-Returns an instance of fake logger for testing
+Config shape
 
-**Parameters:**
-
-| Name | Type |
-| ------ | ------ |
-| config | `DeepReadonly`<`LoggerConfigContract`> |
-
-**Returns:** [FakeLogger](../classes/_poppinss_logger.fakelogger.md)
+#### Type declaration
 
 ___
-<a id="getlogger"></a>
 
-###  getLogger
+## Functions
 
-▸ **getLogger**(config: *`DeepReadonly`<`LoggerConfigContract`>*): [Logger](../classes/_poppinss_logger.logger.md)
+<a id="getpino"></a>
 
-Returns an instance of logger
+###  getPino
+
+▸ **getPino**(options: *`DeepReadonly`<[LoggerConfigContract](_poppinss_logger.md#loggerconfigcontract)>*): `Pino.Logger`
+
+Returns an instance of pino logger by adjusting the config options
 
 **Parameters:**
 
 | Name | Type |
 | ------ | ------ |
-| config | `DeepReadonly`<`LoggerConfigContract`> |
+| options | `DeepReadonly`<[LoggerConfigContract](_poppinss_logger.md#loggerconfigcontract)> |
 
-**Returns:** [Logger](../classes/_poppinss_logger.logger.md)
+**Returns:** `Pino.Logger`
 
 ___
 
