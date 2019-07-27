@@ -1,11 +1,12 @@
+> **[@poppinss/logger](README.md)**
 
-#  @poppinss/logger
+[Globals](README.md) /
 
 ## Index
 
 ### External modules
 
-* [@poppinss/logger](modules/_poppinss_logger.md)
-
----
-
+* ["FakeLogger"](modules/_fakelogger_.md)
+* ["Logger"](modules/_logger_.md)
+* ["contracts"](modules/_contracts_.md)
+* ["getPino"](modules/_getpino_.md)
