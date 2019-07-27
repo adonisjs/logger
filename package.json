@@ -72,6 +72,7 @@
   },
   "dependencies": {
     "@types/pino": "^5.8.8",
+    "abstract-logging": "^1.0.0",
     "pino": "^5.13.1",
     "ts-essentials": "^3.0.0"
   },

@@ -59,6 +59,9 @@ export class FakeLogger extends Logger {
     serializers?: { [key: string]: Pino.SerializerFn },
     [key: string]: any,
   }) {
+    if (!this.$config.enabled) {
+      return this
+    }
     return new FakeLogger(this.$config, this.pino.child(bindings))
   }
 

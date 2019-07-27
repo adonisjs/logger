@@ -242,4 +242,46 @@ test.group('Logger', () => {
     logger.clear()
     assert.deepEqual(logger.logs, [])
   })
+
+  test('use abstract logger when enabled is set to false', (assert) => {
+    const logger = new Logger({
+      name: 'adonis-logger',
+      level: 'info',
+      messageKey: 'msg',
+      enabled: false,
+    })
+
+    logger.info('hello info')
+    logger.debug('hello debug')
+    logger.fatal('hello fatal')
+    logger.error('hello error')
+    logger.warn('hello warn')
+    logger.trace('hello trace')
+
+    assert.equal(logger.level, 'info')
+    assert.equal(logger.levelNumber, 30)
+    assert.deepEqual(logger.child({}), logger)
+    assert.deepEqual(logger.bindings(), {})
+    assert.isFalse(logger.isLevelEnabled('info'))
+    assert.equal(logger.pinoVersion, '5.13.1')
+    assert.equal(logger.LOG_VERSION, 1)
+    assert.deepEqual(logger.levels, {
+      labels: {
+        10: 'trace',
+        20: 'debug',
+        30: 'info',
+        40: 'warn',
+        50: 'error',
+        60: 'fatal',
+      },
+      values: {
+        fatal: 60,
+        error: 50,
+        warn: 40,
+        info: 30,
+        debug: 20,
+        trace: 10,
+      },
+    })
+  })
 })

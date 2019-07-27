@@ -12,9 +12,29 @@
 */
 
 import * as Pino from 'pino'
+import * as abstractLogging from 'abstract-logging'
 import { DeepReadonly } from 'ts-essentials'
 import { LoggerConfigContract, LoggerContract } from './contracts'
 import { getPino } from './getPino'
+
+const STATIC_LEVELS = {
+  labels: {
+    10: 'trace',
+    20: 'debug',
+    30: 'info',
+    40: 'warn',
+    50: 'error',
+    60: 'fatal',
+  },
+  values: {
+    fatal: 60,
+    error: 50,
+    warn: 40,
+    info: 30,
+    debug: 20,
+    trace: 10,
+  },
+}
 
 /**
  * Logger class built on top of pino with couple of changes in
@@ -28,13 +48,20 @@ export class Logger implements LoggerContract {
     protected $config: DeepReadonly<LoggerConfigContract>,
     pino?: Pino.Logger,
   ) {
-    this.pino = pino || getPino(this.$config)
+    if (!this.$config.enabled) {
+      this.pino = abstractLogging
+    } else {
+      this.pino = pino || getPino(this.$config)
+    }
   }
 
   /**
    * A map of levels
    */
   public get levels (): Pino.LevelMapping {
+    if (!this.$config.enabled) {
+      return STATIC_LEVELS
+    }
     return this.pino.levels
   }
 
@@ -42,6 +69,9 @@ export class Logger implements LoggerContract {
    * Returns the current logger level
    */
   public get level (): string {
+    if (!this.$config.enabled) {
+      return 'info'
+    }
     return this.pino.level
   }
 
@@ -49,6 +79,9 @@ export class Logger implements LoggerContract {
    * Returns the current logger level number
    */
   public get levelNumber (): number {
+    if (!this.$config.enabled) {
+      return 30
+    }
     return this.pino.levelVal
   }
 
@@ -56,13 +89,16 @@ export class Logger implements LoggerContract {
    * Returns the pino version
    */
   public get pinoVersion (): string {
-    return (this.pino.constructor as any).version
+    return (Pino as any).version
   }
 
   /**
    * Returns the log formatting version
    */
   public get LOG_VERSION (): number {
+    if (!this.$config.enabled) {
+      return 1
+    }
     return this.pino.LOG_VERSION
   }
 
@@ -71,6 +107,9 @@ export class Logger implements LoggerContract {
    * not.
    */
   public isLevelEnabled (level: string): boolean {
+    if (!this.$config.enabled) {
+      return false
+    }
     return this.pino.isLevelEnabled(level)
   }
 
@@ -151,6 +190,9 @@ export class Logger implements LoggerContract {
     serializers?: { [key: string]: Pino.SerializerFn },
     [key: string]: any,
   }) {
+    if (!this.$config.enabled) {
+      return this
+    }
     return new Logger(this.$config, this.pino.child(bindings))
   }
 
@@ -158,6 +200,9 @@ export class Logger implements LoggerContract {
    * Returns default bindings for the logger
    */
   public bindings (): { [key: string]: any } {
+    if (!this.$config.enabled) {
+      return {}
+    }
     return (this.pino as any)['bindings']()
   }
 }
