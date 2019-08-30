@@ -1,6 +1,6 @@
-> **[@poppinss/logger](../README.md)**
+**[@poppinss/logger](../README.md)**
 
-[Globals](../README.md) / ["FakeLogger"](../modules/_fakelogger_.md) / [FakeLogger](_fakelogger_.fakelogger.md) /
+[Globals](../README.md) › ["FakeLogger"](../modules/_fakelogger_.md) › [FakeLogger](_fakelogger_.fakelogger.md)
 
 # Class: FakeLogger
 
@@ -55,7 +55,7 @@ the log messages as an array vs writing them to `stdout`.
 
 ###  constructor
 
-\+ **new FakeLogger**(`config`: `DeepReadonly<LoggerConfigContract>`, `pino?`: `Pino.Logger`): *[FakeLogger](_fakelogger_.fakelogger.md)*
+\+ **new FakeLogger**(`config`: DeepReadonly‹[LoggerConfigContract](../modules/_contracts_.md#loggerconfigcontract)›, `pino?`: Pino.Logger): *[FakeLogger](_fakelogger_.fakelogger.md)*
 
 *Overrides [Logger](_logger_.logger.md).[constructor](_logger_.logger.md#constructor)*
 
@@ -63,8 +63,8 @@ the log messages as an array vs writing them to `stdout`.
 
 Name | Type |
 ------ | ------ |
-`config` | `DeepReadonly<LoggerConfigContract>` |
-`pino?` | `Pino.Logger` |
+`config` | DeepReadonly‹[LoggerConfigContract](../modules/_contracts_.md#loggerconfigcontract)› |
+`pino?` | Pino.Logger |
 
 **Returns:** *[FakeLogger](_fakelogger_.fakelogger.md)*
 
@@ -72,7 +72,7 @@ Name | Type |
 
 ### `Protected` $config
 
-• **$config**: *`DeepReadonly<LoggerConfigContract>`*
+• **$config**: *DeepReadonly‹[LoggerConfigContract](../modules/_contracts_.md#loggerconfigcontract)›*
 
 *Inherited from [Logger](_logger_.logger.md).[$config](_logger_.logger.md#protected-$config)*
 
@@ -80,7 +80,7 @@ ___
 
 ###  pino
 
-• **pino**: *`Pino.Logger`*
+• **pino**: *Pino.Logger*
 
 *Inherited from [Logger](_logger_.logger.md).[pino](_logger_.logger.md#pino)*
 
@@ -124,13 +124,13 @@ ___
 
 ###  levels
 
-• **get levels**(): *`Pino.LevelMapping`*
+• **get levels**(): *Pino.LevelMapping*
 
 *Inherited from [Logger](_logger_.logger.md).[levels](_logger_.logger.md#levels)*
 
 A map of levels
 
-**Returns:** *`Pino.LevelMapping`*
+**Returns:** *Pino.LevelMapping*
 
 ___
 
@@ -168,7 +168,7 @@ Returns default bindings for the logger
 
 **Returns:** *object*
 
-● \[▪ **key**: *string*\]: any
+* \[ **key**: *string*\]: any
 
 ___
 

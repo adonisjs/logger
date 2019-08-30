@@ -11,7 +11,7 @@
 * file that was distributed with this source code.
 */
 
-import * as Pino from 'pino'
+import Pino from 'pino'
 import { DeepReadonly } from 'ts-essentials'
 import { LoggerConfigContract } from './contracts'
 

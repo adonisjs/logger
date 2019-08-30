@@ -1,6 +1,6 @@
-> **[@poppinss/logger](../README.md)**
+**[@poppinss/logger](../README.md)**
 
-[Globals](../README.md) / ["Logger"](../modules/_logger_.md) / [Logger](_logger_.logger.md) /
+[Globals](../README.md) › ["Logger"](../modules/_logger_.md) › [Logger](_logger_.logger.md)
 
 # Class: Logger
 
@@ -54,14 +54,14 @@ object using `logger.pino`.
 
 ###  constructor
 
-\+ **new Logger**(`$config`: `DeepReadonly<LoggerConfigContract>`, `pino?`: `Pino.Logger`): *[Logger](_logger_.logger.md)*
+\+ **new Logger**(`$config`: DeepReadonly‹[LoggerConfigContract](../modules/_contracts_.md#loggerconfigcontract)›, `pino?`: Pino.Logger): *[Logger](_logger_.logger.md)*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`$config` | `DeepReadonly<LoggerConfigContract>` |
-`pino?` | `Pino.Logger` |
+`$config` | DeepReadonly‹[LoggerConfigContract](../modules/_contracts_.md#loggerconfigcontract)› |
+`pino?` | Pino.Logger |
 
 **Returns:** *[Logger](_logger_.logger.md)*
 
@@ -69,13 +69,13 @@ Name | Type |
 
 ### `Protected` $config
 
-• **$config**: *`DeepReadonly<LoggerConfigContract>`*
+• **$config**: *DeepReadonly‹[LoggerConfigContract](../modules/_contracts_.md#loggerconfigcontract)›*
 
 ___
 
 ###  pino
 
-• **pino**: *`Pino.Logger`*
+• **pino**: *Pino.Logger*
 
 ## Accessors
 
@@ -111,11 +111,11 @@ ___
 
 ###  levels
 
-• **get levels**(): *`Pino.LevelMapping`*
+• **get levels**(): *Pino.LevelMapping*
 
 A map of levels
 
-**Returns:** *`Pino.LevelMapping`*
+**Returns:** *Pino.LevelMapping*
 
 ___
 
@@ -139,7 +139,7 @@ Returns default bindings for the logger
 
 **Returns:** *object*
 
-● \[▪ **key**: *string*\]: any
+* \[ **key**: *string*\]: any
 
 ___
 

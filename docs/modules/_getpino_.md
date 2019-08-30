@@ -1,6 +1,6 @@
-> **[@poppinss/logger](../README.md)**
+**[@poppinss/logger](../README.md)**
 
-[Globals](../README.md) / ["getPino"](_getpino_.md) /
+[Globals](../README.md) › ["getPino"](_getpino_.md)
 
 # External module: "getPino"
 
@@ -14,7 +14,7 @@
 
 ###  getPino
 
-▸ **getPino**(`options`: `DeepReadonly<LoggerConfigContract>`): *`Pino.Logger`*
+▸ **getPino**(`options`: DeepReadonly‹[LoggerConfigContract](_contracts_.md#loggerconfigcontract)›): *Pino.Logger*
 
 Returns an instance of pino logger by adjusting the config options
 
@@ -22,6 +22,6 @@ Returns an instance of pino logger by adjusting the config options
 
 Name | Type |
 ------ | ------ |
-`options` | `DeepReadonly<LoggerConfigContract>` |
+`options` | DeepReadonly‹[LoggerConfigContract](_contracts_.md#loggerconfigcontract)› |
 
-**Returns:** *`Pino.Logger`*
+**Returns:** *Pino.Logger*

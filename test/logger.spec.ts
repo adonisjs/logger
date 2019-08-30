@@ -9,7 +9,7 @@
 
 /// <reference path="../src/contracts.ts" />
 
-import * as test from 'japa'
+import test from 'japa'
 import { Writable } from 'stream'
 import { Logger, FakeLogger } from '../index'
 
@@ -263,7 +263,7 @@ test.group('Logger', () => {
     assert.deepEqual(logger.child({}), logger)
     assert.deepEqual(logger.bindings(), {})
     assert.isFalse(logger.isLevelEnabled('info'))
-    assert.equal(logger.pinoVersion, '5.13.1')
+    assert.equal(logger.pinoVersion, '5.13.2')
     assert.equal(logger.LOG_VERSION, 1)
     assert.deepEqual(logger.levels, {
       labels: {

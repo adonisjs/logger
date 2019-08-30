@@ -11,8 +11,8 @@
 * file that was distributed with this source code.
 */
 
-import * as Pino from 'pino'
-import * as abstractLogging from 'abstract-logging'
+import Pino from 'pino'
+import abstractLogging from 'abstract-logging'
 import { DeepReadonly } from 'ts-essentials'
 import { LoggerConfigContract, LoggerContract } from './contracts'
 import { getPino } from './getPino'

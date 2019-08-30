@@ -1,6 +1,6 @@
-> **[@poppinss/logger](README.md)**
+**[@poppinss/logger](README.md)**
 
-[Globals](README.md) /
+[Globals](README.md)
 
 ## Index
 

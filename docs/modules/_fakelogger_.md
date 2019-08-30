@@ -1,6 +1,6 @@
-> **[@poppinss/logger](../README.md)**
+**[@poppinss/logger](../README.md)**
 
-[Globals](../README.md) / ["FakeLogger"](_fakelogger_.md) /
+[Globals](../README.md) › ["FakeLogger"](_fakelogger_.md)
 
 # External module: "FakeLogger"
 

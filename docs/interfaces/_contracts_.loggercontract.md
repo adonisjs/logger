@@ -1,6 +1,6 @@
-> **[@poppinss/logger](../README.md)**
+**[@poppinss/logger](../README.md)**
 
-[Globals](../README.md) / ["contracts"](../modules/_contracts_.md) / [LoggerContract](_contracts_.loggercontract.md) /
+[Globals](../README.md) › ["contracts"](../modules/_contracts_.md) › [LoggerContract](_contracts_.loggercontract.md)
 
 # Interface: LoggerContract
 
@@ -60,7 +60,7 @@ ___
 
 ###  levels
 
-• **levels**: *`LevelMapping`*
+• **levels**: *LevelMapping*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 **Returns:** *object*
 
-● \[▪ **key**: *string*\]: any
+* \[ **key**: *string*\]: any
 
 ___
 
