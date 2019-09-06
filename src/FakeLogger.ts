@@ -1,21 +1,22 @@
 /**
- * @module @poppinss/logger
+ * @module @adonisjs/logger
 */
 
 /*
-* @poppinss/logger
+* @adonisjs/logger
 *
 * (c) Harminder Virk <virk@adonisjs.com>
 *
 * For the full copyright and license information, please view the LICENSE
 * file that was distributed with this source code.
 */
+/// <reference path="../adonis-typings/logger.ts" />
 
 import Pino from 'pino'
 import { DeepReadonly } from 'ts-essentials'
+import { LoggerConfigContract } from '@ioc:Adonis/Core/Logger'
 
 import { Logger } from './Logger'
-import { LoggerConfigContract } from './contracts'
 
 /**
  * Fake logger that sets a custom logger stream and returns

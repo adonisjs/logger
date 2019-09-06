@@ -1,9 +1,9 @@
 /**
- * @module @poppinss/logger
- */
+ * @module @adonisjs/logger
+*/
 
 /*
-* @poppinss/logger
+* @adonisjs/logger
 *
 * (c) Harminder Virk <virk@adonisjs.com>
 *
@@ -11,9 +11,11 @@
 * file that was distributed with this source code.
 */
 
+/// <reference path="../adonis-typings/logger.ts" />
+
 import Pino from 'pino'
 import { DeepReadonly } from 'ts-essentials'
-import { LoggerConfigContract } from './contracts'
+import { LoggerConfigContract } from '@ioc:Adonis/Core/Logger'
 
 /**
  * Returns an instance of pino logger by adjusting the config options

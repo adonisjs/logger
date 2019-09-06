@@ -1,6 +1,6 @@
-**[@poppinss/logger](../README.md)**
+**[@adonisjs/logger](../README.md)**
 
-[Globals](../README.md) › ["Logger"](../modules/_logger_.md) › [Logger](_logger_.logger.md)
+[Globals](../README.md) › ["src/Logger"](../modules/_src_logger_.md) › [Logger](_src_logger_.logger.md)
 
 # Class: Logger
 
@@ -12,64 +12,64 @@ object using `logger.pino`.
 
 * **Logger**
 
-  * [FakeLogger](_fakelogger_.fakelogger.md)
+  * [FakeLogger](_src_fakelogger_.fakelogger.md)
 
 ## Implements
 
-* [LoggerContract](../interfaces/_contracts_.loggercontract.md)
+* LoggerContract
 
 ## Index
 
 ### Constructors
 
-* [constructor](_logger_.logger.md#constructor)
+* [constructor](_src_logger_.logger.md#constructor)
 
 ### Properties
 
-* [$config](_logger_.logger.md#protected-$config)
-* [pino](_logger_.logger.md#pino)
+* [$config](_src_logger_.logger.md#protected-$config)
+* [pino](_src_logger_.logger.md#pino)
 
 ### Accessors
 
-* [LOG_VERSION](_logger_.logger.md#log_version)
-* [level](_logger_.logger.md#level)
-* [levelNumber](_logger_.logger.md#levelnumber)
-* [levels](_logger_.logger.md#levels)
-* [pinoVersion](_logger_.logger.md#pinoversion)
+* [LOG_VERSION](_src_logger_.logger.md#log_version)
+* [level](_src_logger_.logger.md#level)
+* [levelNumber](_src_logger_.logger.md#levelnumber)
+* [levels](_src_logger_.logger.md#levels)
+* [pinoVersion](_src_logger_.logger.md#pinoversion)
 
 ### Methods
 
-* [bindings](_logger_.logger.md#bindings)
-* [child](_logger_.logger.md#child)
-* [debug](_logger_.logger.md#debug)
-* [error](_logger_.logger.md#error)
-* [fatal](_logger_.logger.md#fatal)
-* [info](_logger_.logger.md#info)
-* [isLevelEnabled](_logger_.logger.md#islevelenabled)
-* [log](_logger_.logger.md#log)
-* [trace](_logger_.logger.md#trace)
-* [warn](_logger_.logger.md#warn)
+* [bindings](_src_logger_.logger.md#bindings)
+* [child](_src_logger_.logger.md#child)
+* [debug](_src_logger_.logger.md#debug)
+* [error](_src_logger_.logger.md#error)
+* [fatal](_src_logger_.logger.md#fatal)
+* [info](_src_logger_.logger.md#info)
+* [isLevelEnabled](_src_logger_.logger.md#islevelenabled)
+* [log](_src_logger_.logger.md#log)
+* [trace](_src_logger_.logger.md#trace)
+* [warn](_src_logger_.logger.md#warn)
 
 ## Constructors
 
 ###  constructor
 
-\+ **new Logger**(`$config`: DeepReadonly‹[LoggerConfigContract](../modules/_contracts_.md#loggerconfigcontract)›, `pino?`: Pino.Logger): *[Logger](_logger_.logger.md)*
+\+ **new Logger**(`$config`: DeepReadonly‹LoggerConfigContract›, `pino?`: Pino.Logger): *[Logger](_src_logger_.logger.md)*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`$config` | DeepReadonly‹[LoggerConfigContract](../modules/_contracts_.md#loggerconfigcontract)› |
+`$config` | DeepReadonly‹LoggerConfigContract› |
 `pino?` | Pino.Logger |
 
-**Returns:** *[Logger](_logger_.logger.md)*
+**Returns:** *[Logger](_src_logger_.logger.md)*
 
 ## Properties
 
 ### `Protected` $config
 
-• **$config**: *DeepReadonly‹[LoggerConfigContract](../modules/_contracts_.md#loggerconfigcontract)›*
+• **$config**: *DeepReadonly‹LoggerConfigContract›*
 
 ___
 
@@ -133,8 +133,6 @@ Returns the pino version
 
 ▸ **bindings**(): *object*
 
-*Implementation of [LoggerContract](../interfaces/_contracts_.loggercontract.md)*
-
 Returns default bindings for the logger
 
 **Returns:** *object*
@@ -145,7 +143,7 @@ ___
 
 ###  child
 
-▸ **child**(`bindings`: object): *[Logger](_logger_.logger.md)*
+▸ **child**(`bindings`: object): *[Logger](_src_logger_.logger.md)*
 
 Returns a child logger instance
 
@@ -155,15 +153,13 @@ Name | Type |
 ------ | ------ |
 `bindings` | object |
 
-**Returns:** *[Logger](_logger_.logger.md)*
+**Returns:** *[Logger](_src_logger_.logger.md)*
 
 ___
 
 ###  debug
 
 ▸ **debug**(`message`: string, ...`values`: any[]): *void*
-
-*Implementation of [LoggerContract](../interfaces/_contracts_.loggercontract.md)*
 
 Log message at debug level
 
@@ -177,8 +173,6 @@ Name | Type |
 **Returns:** *void*
 
 ▸ **debug**(`mergingObject`: any, `message`: string, ...`values`: any[]): *void*
-
-*Implementation of [LoggerContract](../interfaces/_contracts_.loggercontract.md)*
 
 **Parameters:**
 
@@ -196,8 +190,6 @@ ___
 
 ▸ **error**(`message`: string, ...`values`: any[]): *void*
 
-*Implementation of [LoggerContract](../interfaces/_contracts_.loggercontract.md)*
-
 Log message at error level
 
 **Parameters:**
@@ -210,8 +202,6 @@ Name | Type |
 **Returns:** *void*
 
 ▸ **error**(`mergingObject`: any, `message`: string, ...`values`: any[]): *void*
-
-*Implementation of [LoggerContract](../interfaces/_contracts_.loggercontract.md)*
 
 **Parameters:**
 
@@ -229,8 +219,6 @@ ___
 
 ▸ **fatal**(`message`: string, ...`values`: any[]): *void*
 
-*Implementation of [LoggerContract](../interfaces/_contracts_.loggercontract.md)*
-
 Log message at fatal level
 
 **Parameters:**
@@ -243,8 +231,6 @@ Name | Type |
 **Returns:** *void*
 
 ▸ **fatal**(`mergingObject`: any, `message`: string, ...`values`: any[]): *void*
-
-*Implementation of [LoggerContract](../interfaces/_contracts_.loggercontract.md)*
 
 **Parameters:**
 
@@ -262,8 +248,6 @@ ___
 
 ▸ **info**(`message`: string, ...`values`: any[]): *void*
 
-*Implementation of [LoggerContract](../interfaces/_contracts_.loggercontract.md)*
-
 Log message at info level
 
 **Parameters:**
@@ -276,8 +260,6 @@ Name | Type |
 **Returns:** *void*
 
 ▸ **info**(`mergingObject`: any, `message`: string, ...`values`: any[]): *void*
-
-*Implementation of [LoggerContract](../interfaces/_contracts_.loggercontract.md)*
 
 **Parameters:**
 
@@ -294,8 +276,6 @@ ___
 ###  isLevelEnabled
 
 ▸ **isLevelEnabled**(`level`: string): *boolean*
-
-*Implementation of [LoggerContract](../interfaces/_contracts_.loggercontract.md)*
 
 Returns a boolean telling if level is enabled or
 not.
@@ -314,8 +294,6 @@ ___
 
 ▸ **log**(`level`: string, `message`: string, ...`values`: any[]): *void*
 
-*Implementation of [LoggerContract](../interfaces/_contracts_.loggercontract.md)*
-
 Log message for any named level
 
 **Parameters:**
@@ -329,8 +307,6 @@ Name | Type |
 **Returns:** *void*
 
 ▸ **log**(`level`: string, `mergingObject`: any, `message`: string, ...`values`: any[]): *void*
-
-*Implementation of [LoggerContract](../interfaces/_contracts_.loggercontract.md)*
 
 **Parameters:**
 
@@ -349,8 +325,6 @@ ___
 
 ▸ **trace**(`message`: string, ...`values`: any[]): *void*
 
-*Implementation of [LoggerContract](../interfaces/_contracts_.loggercontract.md)*
-
 Log message at trace level
 
 **Parameters:**
@@ -363,8 +337,6 @@ Name | Type |
 **Returns:** *void*
 
 ▸ **trace**(`mergingObject`: any, `message`: string, ...`values`: any[]): *void*
-
-*Implementation of [LoggerContract](../interfaces/_contracts_.loggercontract.md)*
 
 **Parameters:**
 
@@ -382,8 +354,6 @@ ___
 
 ▸ **warn**(`message`: string, ...`values`: any[]): *void*
 
-*Implementation of [LoggerContract](../interfaces/_contracts_.loggercontract.md)*
-
 Log message at warn level
 
 **Parameters:**
@@ -396,8 +366,6 @@ Name | Type |
 **Returns:** *void*
 
 ▸ **warn**(`mergingObject`: any, `message`: string, ...`values`: any[]): *void*
-
-*Implementation of [LoggerContract](../interfaces/_contracts_.loggercontract.md)*
 
 **Parameters:**
 

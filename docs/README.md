@@ -1,4 +1,4 @@
-**[@poppinss/logger](README.md)**
+**[@adonisjs/logger](README.md)**
 
 [Globals](README.md)
 
@@ -6,7 +6,9 @@
 
 ### External modules
 
-* ["FakeLogger"](modules/_fakelogger_.md)
-* ["Logger"](modules/_logger_.md)
-* ["contracts"](modules/_contracts_.md)
-* ["getPino"](modules/_getpino_.md)
+* ["adonis-typings/logger"](modules/_adonis_typings_logger_.md)
+* ["providers/LoggerProvider"](modules/_providers_loggerprovider_.md)
+* ["src/FakeLogger"](modules/_src_fakelogger_.md)
+* ["src/Logger"](modules/_src_logger_.md)
+* ["src/getPino"](modules/_src_getpino_.md)
+* ["standalone"](modules/_standalone_.md)

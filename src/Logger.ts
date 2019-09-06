@@ -1,9 +1,9 @@
 /**
- * @module @poppinss/logger
+ * @module @adonisjs/logger
 */
 
 /*
-* @poppinss/logger
+* @adonisjs/logger
 *
 * (c) Harminder Virk <virk@adonisjs.com>
 *
@@ -11,10 +11,13 @@
 * file that was distributed with this source code.
 */
 
+/// <reference path="../adonis-typings/logger.ts" />
+
 import Pino from 'pino'
-import abstractLogging from 'abstract-logging'
 import { DeepReadonly } from 'ts-essentials'
-import { LoggerConfigContract, LoggerContract } from './contracts'
+import abstractLogging from 'abstract-logging'
+import { LoggerConfigContract, LoggerContract } from '@ioc:Adonis/Core/Logger'
+
 import { getPino } from './getPino'
 
 const STATIC_LEVELS = {

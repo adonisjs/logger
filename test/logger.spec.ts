@@ -1,5 +1,9 @@
+/**
+ * @module @adonisjs/logger
+*/
+
 /*
-* @poppinss/logger
+* @adonisjs/logger
 *
 * (c) Harminder Virk <virk@adonisjs.com>
 *
@@ -7,11 +11,9 @@
 * file that was distributed with this source code.
 */
 
-/// <reference path="../src/contracts.ts" />
-
 import test from 'japa'
 import { Writable } from 'stream'
-import { Logger, FakeLogger } from '../index'
+import { Logger, FakeLogger } from '../standalone'
 
 function getFakeStream (fn: ((line: string) => boolean)) {
   const stream = new Writable()

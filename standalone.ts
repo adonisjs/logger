@@ -1,9 +1,9 @@
 /**
- * @module @poppinss/logger
+ * @module @adonisjs/logger
 */
 
 /*
-* @poppinss/logger
+* @adonisjs/logger
 *
 * (c) Harminder Virk <virk@adonisjs.com>
 *
@@ -13,4 +13,3 @@
 
 export { Logger } from './src/Logger'
 export { FakeLogger } from './src/FakeLogger'
-export { LoggerConfigContract, LoggerContract } from './src/contracts'
