@@ -6,6 +6,7 @@
     "build/adonis-typings",
     "build/providers",
     "build/src",
+    "build/templates",
     "build/standalone.d.ts",
     "build/standalone.js"
   ],
@@ -15,8 +16,9 @@
     "test": "node japaFile.js",
     "lint": "tslint --project tsconfig.json",
     "clean": "del build",
+    "copyfiles": "copyfiles \"templates/**/*.txt\" build",
     "compile": "npm run lint && npm run clean && tsc",
-    "build": "npm run compile && typedoc --theme markdown --excludePrivate --HideSources && git add docs",
+    "build": "npm run compile && npm run copyfiles && typedoc --theme markdown --excludePrivate --HideSources && git add docs",
     "commit": "git-cz",
     "release": "np",
     "version": "npm run build"
