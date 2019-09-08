@@ -20,7 +20,7 @@
 
 ### Methods
 
-* [$registerLogger](_providers_loggerprovider_.loggerprovider.md#protected-$registerlogger)
+* [register](_providers_loggerprovider_.loggerprovider.md#register)
 
 ## Constructors
 
@@ -44,8 +44,8 @@ Name | Type |
 
 ## Methods
 
-### `Protected` $registerLogger
+###  register
 
-▸ **$registerLogger**(): *void*
+▸ **register**(): *void*
 
 **Returns:** *void*
