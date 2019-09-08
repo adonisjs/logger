@@ -1,3 +1,7 @@
+/**
+ * @module @adonisjs/logger
+*/
+
 /*
 * @adonisjs/logger
 *
@@ -13,9 +17,9 @@ import { Logger } from '../src/Logger'
 export default class LoggerProvider {
   constructor (protected $container: IocContract) {}
 
-  protected $registerLogger () {
+  public register () {
     this.$container.singleton('Adonis/Core/Logger', () => {
-      return new Logger(this.$container.use('Adonis/Core/Config').get('logger', {}))
+      return new Logger(this.$container.use('Adonis/Core/Config').get('app.logger', {}))
     })
   }
 }

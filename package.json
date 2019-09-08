@@ -92,12 +92,5 @@
   "bugs": {
     "url": "https://github.com/adonisjs/logger/issues"
   },
-  "homepage": "https://github.com/adonisjs/logger#readme",
-  "adonisjs": {
-    "templates": {
-      "config": [
-        "logger.txt"
-      ]
-    }
-  }
+  "homepage": "https://github.com/adonisjs/logger#readme"
 }
