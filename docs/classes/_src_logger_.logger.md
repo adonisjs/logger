@@ -1,6 +1,6 @@
 **[@adonisjs/logger](../README.md)**
 
-[Globals](../README.md) › ["src/Logger"](../modules/_src_logger_.md) › [Logger](_src_logger_.logger.md)
+[Globals](../README.md) › [&quot;src/Logger&quot;](../modules/_src_logger_.md) › [Logger](_src_logger_.logger.md)
 
 # Class: Logger
 

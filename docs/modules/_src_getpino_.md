@@ -1,6 +1,6 @@
 **[@adonisjs/logger](../README.md)**
 
-[Globals](../README.md) › ["src/getPino"](_src_getpino_.md)
+[Globals](../README.md) › [&quot;src/getPino&quot;](_src_getpino_.md)
 
 # External module: "src/getPino"
 
