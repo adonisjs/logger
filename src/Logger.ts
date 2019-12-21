@@ -73,8 +73,9 @@ export class Logger implements LoggerContract {
    */
   public get level (): string {
     if (!this.$config.enabled) {
-      return 'info'
+      return this.$config.level
     }
+
     return this.pino.level
   }
 
@@ -83,8 +84,9 @@ export class Logger implements LoggerContract {
    */
   public get levelNumber (): number {
     if (!this.$config.enabled) {
-      return 30
+      return STATIC_LEVELS.values[this.$config.level]
     }
+
     return this.pino.levelVal
   }
 
@@ -100,8 +102,9 @@ export class Logger implements LoggerContract {
    */
   public get LOG_VERSION (): number {
     if (!this.$config.enabled) {
-      return 1
+      return Pino.LOG_VERSION
     }
+
     return this.pino.LOG_VERSION
   }
 
@@ -113,6 +116,7 @@ export class Logger implements LoggerContract {
     if (!this.$config.enabled) {
       return false
     }
+
     return this.pino.isLevelEnabled(level)
   }
 
