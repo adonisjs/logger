@@ -1,6 +1,4 @@
-**[@adonisjs/logger](../README.md)**
-
-[Globals](../README.md) › [&quot;src/FakeLogger&quot;](../modules/_src_fakelogger_.md) › [FakeLogger](_src_fakelogger_.fakelogger.md)
+[@adonisjs/logger](../README.md) › ["src/FakeLogger"](../modules/_src_fakelogger_.md) › [FakeLogger](_src_fakelogger_.fakelogger.md)
 
 # Class: FakeLogger
 
@@ -11,7 +9,7 @@ the log messages as an array vs writing them to `stdout`.
 
 * [Logger](_src_logger_.logger.md)
 
-  * **FakeLogger**
+  ↳ **FakeLogger**
 
 ## Implements
 
@@ -172,7 +170,7 @@ ___
 
 ###  child
 
-▸ **child**(`bindings`: object): *[FakeLogger](_src_fakelogger_.fakelogger.md)*
+▸ **child**(`bindings`: object): *[FakeLogger](_src_fakelogger_.fakelogger.md)‹›*
 
 *Overrides [Logger](_src_logger_.logger.md).[child](_src_logger_.logger.md#child)*
 
@@ -185,7 +183,7 @@ Name | Type |
 ------ | ------ |
 `bindings` | object |
 
-**Returns:** *[FakeLogger](_src_fakelogger_.fakelogger.md)*
+**Returns:** *[FakeLogger](_src_fakelogger_.fakelogger.md)‹›*
 
 ___
 

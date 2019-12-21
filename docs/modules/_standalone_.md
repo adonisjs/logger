@@ -1,6 +1,5 @@
-**[@adonisjs/logger](../README.md)**
-
-[Globals](../README.md) › [&quot;standalone&quot;](_standalone_.md)
+[@adonisjs/logger](../README.md) › ["standalone"](_standalone_.md)
 
 # External module: "standalone"
+
 

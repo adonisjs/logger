@@ -1,6 +1,4 @@
-**[@adonisjs/logger](../README.md)**
-
-[Globals](../README.md) › [&quot;src/Logger&quot;](../modules/_src_logger_.md) › [Logger](_src_logger_.logger.md)
+[@adonisjs/logger](../README.md) › ["src/Logger"](../modules/_src_logger_.md) › [Logger](_src_logger_.logger.md)
 
 # Class: Logger
 
@@ -12,7 +10,7 @@ object using `logger.pino`.
 
 * **Logger**
 
-  * [FakeLogger](_src_fakelogger_.fakelogger.md)
+  ↳ [FakeLogger](_src_fakelogger_.fakelogger.md)
 
 ## Implements
 
@@ -143,7 +141,7 @@ ___
 
 ###  child
 
-▸ **child**(`bindings`: object): *[Logger](_src_logger_.logger.md)*
+▸ **child**(`bindings`: object): *[Logger](_src_logger_.logger.md)‹›*
 
 Returns a child logger instance
 
@@ -153,7 +151,7 @@ Name | Type |
 ------ | ------ |
 `bindings` | object |
 
-**Returns:** *[Logger](_src_logger_.logger.md)*
+**Returns:** *[Logger](_src_logger_.logger.md)‹›*
 
 ___
 

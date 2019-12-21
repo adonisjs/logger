@@ -1,6 +1,4 @@
-**[@adonisjs/logger](../README.md)**
-
-[Globals](../README.md) › [&quot;providers/LoggerProvider&quot;](../modules/_providers_loggerprovider_.md) › [LoggerProvider](_providers_loggerprovider_.loggerprovider.md)
+[@adonisjs/logger](../README.md) › ["providers/LoggerProvider"](../modules/_providers_loggerprovider_.md) › [LoggerProvider](_providers_loggerprovider_.loggerprovider.md)
 
 # Class: LoggerProvider
 

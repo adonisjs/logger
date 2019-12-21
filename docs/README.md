@@ -1,6 +1,4 @@
-**[@adonisjs/logger](README.md)**
-
-[Globals](README.md)
+[@adonisjs/logger](README.md)
 
 # @adonisjs/logger
 
