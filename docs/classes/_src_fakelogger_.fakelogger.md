@@ -23,7 +23,7 @@ the log messages as an array vs writing them to `stdout`.
 
 ### Properties
 
-* [$config](_src_fakelogger_.fakelogger.md#protected-$config)
+* [$config](_src_fakelogger_.fakelogger.md#protected-config)
 * [pino](_src_fakelogger_.fakelogger.md#pino)
 
 ### Accessors
@@ -72,7 +72,7 @@ Name | Type |
 
 • **$config**: *DeepReadonly‹LoggerConfigContract›*
 
-*Inherited from [Logger](_src_logger_.logger.md).[$config](_src_logger_.logger.md#protected-$config)*
+*Inherited from [Logger](_src_logger_.logger.md).[$config](_src_logger_.logger.md#protected-config)*
 
 ___
 

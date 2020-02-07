@@ -14,7 +14,7 @@
 
 ### Properties
 
-* [$container](_providers_loggerprovider_.loggerprovider.md#protected-$container)
+* [$container](_providers_loggerprovider_.loggerprovider.md#protected-container)
 
 ### Methods
 

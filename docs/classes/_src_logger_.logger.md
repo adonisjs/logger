@@ -24,7 +24,7 @@ object using `logger.pino`.
 
 ### Properties
 
-* [$config](_src_logger_.logger.md#protected-$config)
+* [$config](_src_logger_.logger.md#protected-config)
 * [pino](_src_logger_.logger.md#pino)
 
 ### Accessors
