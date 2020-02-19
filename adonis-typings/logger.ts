@@ -81,7 +81,7 @@ declare module '@ioc:Adonis/Core/Logger' {
     bindings (): { [key: string]: any },
     child (bindings: {
       level?: Level | string,
-      serializers: { [key: string]: SerializerFn },
+      serializers?: { [key: string]: SerializerFn },
       [key: string]: any,
     }): LoggerContract,
   }
