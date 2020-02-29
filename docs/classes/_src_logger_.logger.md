@@ -147,9 +147,12 @@ Returns a child logger instance
 
 **Parameters:**
 
+▪ **bindings**: *object*
+
 Name | Type |
 ------ | ------ |
-`bindings` | object |
+`level?` | Pino.Level &#124; string |
+`serializers?` | undefined &#124; object |
 
 **Returns:** *[Logger](_src_logger_.logger.md)‹›*
 

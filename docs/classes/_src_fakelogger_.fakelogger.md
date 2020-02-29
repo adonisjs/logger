@@ -179,9 +179,12 @@ are writte to the same top level stream
 
 **Parameters:**
 
+▪ **bindings**: *object*
+
 Name | Type |
 ------ | ------ |
-`bindings` | object |
+`level?` | Pino.Level &#124; string |
+`serializers?` | undefined &#124; object |
 
 **Returns:** *[FakeLogger](_src_fakelogger_.fakelogger.md)‹›*
 
