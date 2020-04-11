@@ -52,7 +52,7 @@ the log messages as an array vs writing them to `stdout`.
 
 ###  constructor
 
-\+ **new FakeLogger**(`config`: DeepReadonly‹LoggerConfigContract›, `pino?`: Pino.Logger): *[FakeLogger](_src_fakelogger_.fakelogger.md)*
+\+ **new FakeLogger**(`config`: LoggerConfig, `pino?`: Pino.Logger): *[FakeLogger](_src_fakelogger_.fakelogger.md)*
 
 *Overrides [Logger](_src_logger_.logger.md).[constructor](_src_logger_.logger.md#constructor)*
 
@@ -60,7 +60,7 @@ the log messages as an array vs writing them to `stdout`.
 
 Name | Type |
 ------ | ------ |
-`config` | DeepReadonly‹LoggerConfigContract› |
+`config` | LoggerConfig |
 `pino?` | Pino.Logger |
 
 **Returns:** *[FakeLogger](_src_fakelogger_.fakelogger.md)*
@@ -69,7 +69,7 @@ Name | Type |
 
 ### `Protected` $config
 
-• **$config**: *DeepReadonly‹LoggerConfigContract›*
+• **$config**: *LoggerConfig*
 
 *Inherited from [Logger](_src_logger_.logger.md).[$config](_src_logger_.logger.md#protected-config)*
 

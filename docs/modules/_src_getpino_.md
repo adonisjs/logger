@@ -12,7 +12,7 @@
 
 ###  getPino
 
-▸ **getPino**(`options`: DeepReadonly‹LoggerConfigContract›): *Pino.Logger*
+▸ **getPino**(`options`: LoggerConfig): *Pino.Logger*
 
 Returns an instance of pino logger by adjusting the config options
 
@@ -20,6 +20,6 @@ Returns an instance of pino logger by adjusting the config options
 
 Name | Type |
 ------ | ------ |
-`options` | DeepReadonly‹LoggerConfigContract› |
+`options` | LoggerConfig |
 
 **Returns:** *Pino.Logger*

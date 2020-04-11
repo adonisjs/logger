@@ -51,13 +51,13 @@ object using `logger.pino`.
 
 ###  constructor
 
-\+ **new Logger**(`$config`: DeepReadonly‹LoggerConfigContract›, `pino?`: Pino.Logger): *[Logger](_src_logger_.logger.md)*
+\+ **new Logger**(`$config`: LoggerConfig, `pino?`: Pino.Logger): *[Logger](_src_logger_.logger.md)*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`$config` | DeepReadonly‹LoggerConfigContract› |
+`$config` | LoggerConfig |
 `pino?` | Pino.Logger |
 
 **Returns:** *[Logger](_src_logger_.logger.md)*
@@ -66,7 +66,7 @@ Name | Type |
 
 ### `Protected` $config
 
-• **$config**: *DeepReadonly‹LoggerConfigContract›*
+• **$config**: *LoggerConfig*
 
 ___
 
