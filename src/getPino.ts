@@ -21,6 +21,6 @@ import { LoggerConfigContract } from '@ioc:Adonis/Core/Logger'
  * Returns an instance of pino logger by adjusting the config options
  */
 export function getPino (options: DeepReadonly<LoggerConfigContract>): Pino.Logger {
-  const pinoOptions = Object.assign({ levelKey: options.levelKey || 'level' }, options)
+  const pinoOptions = Object.assign({}, options)
   return options.stream ? Pino(pinoOptions as any, options.stream) : Pino(pinoOptions as any)
 }

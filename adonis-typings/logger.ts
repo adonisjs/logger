@@ -32,8 +32,6 @@ declare module '@ioc:Adonis/Core/Logger' {
     messageKey?: string,
     safe?: boolean,
     crlf?: boolean,
-    useLevelLabels?: boolean,
-    levelKey?: string,
     timestamp?: TimeFn | boolean,
     customLevels?: {
       [key: string]: number,
