@@ -35,7 +35,7 @@ declare module '@ioc:Adonis/Core/Logger' {
   /**
    * Config shape
    */
-  export type LoggerConfigContract = {
+  export type LoggerConfig = {
     name: string,
     level: Level | 'silent' | string,
     enabled: boolean,

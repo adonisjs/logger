@@ -79,8 +79,7 @@
   "dependencies": {
     "@types/pino": "^5.17.0",
     "abstract-logging": "^2.0.0",
-    "pino": "^6.1.1",
-    "ts-essentials": "^6.0.4"
+    "pino": "^6.1.1"
   },
   "directories": {
     "doc": "docs",

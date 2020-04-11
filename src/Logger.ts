@@ -14,9 +14,8 @@
 /// <reference path="../adonis-typings/logger.ts" />
 
 import Pino from 'pino'
-import { DeepReadonly } from 'ts-essentials'
 import abstractLogging from 'abstract-logging'
-import { LoggerConfigContract, LoggerContract } from '@ioc:Adonis/Core/Logger'
+import { LoggerConfig, LoggerContract } from '@ioc:Adonis/Core/Logger'
 
 import { getPino } from './getPino'
 
@@ -48,7 +47,7 @@ export class Logger implements LoggerContract {
   public pino: Pino.Logger
 
   constructor (
-    protected $config: DeepReadonly<LoggerConfigContract>,
+    protected $config: LoggerConfig,
     pino?: Pino.Logger,
   ) {
     if (!this.$config.enabled) {

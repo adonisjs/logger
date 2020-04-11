@@ -13,8 +13,7 @@
 /// <reference path="../adonis-typings/logger.ts" />
 
 import Pino from 'pino'
-import { DeepReadonly } from 'ts-essentials'
-import { LoggerConfigContract } from '@ioc:Adonis/Core/Logger'
+import { LoggerConfig } from '@ioc:Adonis/Core/Logger'
 
 import { Logger } from './Logger'
 
@@ -23,7 +22,7 @@ import { Logger } from './Logger'
  * the log messages as an array vs writing them to `stdout`.
  */
 export class FakeLogger extends Logger {
-  constructor (config: DeepReadonly<LoggerConfigContract>, pino?: Pino.Logger) {
+  constructor (config: LoggerConfig, pino?: Pino.Logger) {
     /**
      * Config is only used when we are not receiving an
      * existing instance of pino.

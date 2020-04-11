@@ -14,13 +14,12 @@
 /// <reference path="../adonis-typings/logger.ts" />
 
 import Pino from 'pino'
-import { DeepReadonly } from 'ts-essentials'
-import { LoggerConfigContract } from '@ioc:Adonis/Core/Logger'
+import { LoggerConfig } from '@ioc:Adonis/Core/Logger'
 
 /**
  * Returns an instance of pino logger by adjusting the config options
  */
-export function getPino (options: DeepReadonly<LoggerConfigContract>): Pino.Logger {
+export function getPino (options: LoggerConfig): Pino.Logger {
   const pinoOptions = Object.assign({}, options)
   return options.stream ? Pino(pinoOptions as any, options.stream) : Pino(pinoOptions as any)
 }
