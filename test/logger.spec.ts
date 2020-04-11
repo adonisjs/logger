@@ -285,4 +285,124 @@ test.group('Logger', () => {
       },
     })
   })
+
+  test('define custom level formatter', (assert) => {
+    const messages: string[] = []
+
+    const logger = new Logger({
+      name: 'adonis-logger',
+      level: 'trace',
+      messageKey: 'msg',
+      enabled: true,
+      stream: getFakeStream((message) => {
+        messages.push(message.trim())
+        return true
+      }),
+      formatters: {
+        level (_, levelNumber) {
+          return { foo: levelNumber }
+        },
+      },
+    })
+
+    logger.trace('hello trace')
+    logger.debug('hello debug')
+    logger.info('hello info')
+    logger.warn('hello warn')
+    logger.error('hello error')
+    logger.fatal('hello fatal')
+
+    assert.deepEqual(messages.map((m) => {
+      const parsed = JSON.parse(m)
+      return { foo: parsed.foo, msg: parsed.msg }
+    }), [
+      {
+        foo: 10,
+        msg: 'hello trace',
+      },
+      {
+        foo: 20,
+        msg: 'hello debug',
+      },
+      {
+        foo: 30,
+        msg: 'hello info',
+      },
+      {
+        foo: 40,
+        msg: 'hello warn',
+      },
+      {
+        foo: 50,
+        msg: 'hello error',
+      },
+      {
+        foo: 60,
+        msg: 'hello fatal',
+      },
+    ])
+  })
+
+  test('define custom log formatter', (assert) => {
+    const messages: string[] = []
+
+    const logger = new Logger({
+      name: 'adonis-logger',
+      level: 'trace',
+      messageKey: 'msg',
+      enabled: true,
+      stream: getFakeStream((message) => {
+        messages.push(message.trim())
+        return true
+      }),
+      formatters: {
+        log (log) {
+          return Object.assign({ ticked: true }, log)
+        },
+      },
+    })
+
+    logger.trace('hello trace')
+    logger.debug('hello debug')
+    logger.info('hello info')
+    logger.warn('hello warn')
+    logger.error('hello error')
+    logger.fatal('hello fatal')
+
+    assert.deepEqual(messages.map((m) => {
+      const parsed = JSON.parse(m)
+      return { level: parsed.level, msg: parsed.msg, ticked: parsed.ticked }
+    }), [
+      {
+        level: 10,
+        ticked: true,
+        msg: 'hello trace',
+      },
+      {
+        level: 20,
+        ticked: true,
+        msg: 'hello debug',
+      },
+      {
+        level: 30,
+        ticked: true,
+        msg: 'hello info',
+      },
+      {
+        level: 40,
+        ticked: true,
+        msg: 'hello warn',
+      },
+      {
+        level: 50,
+        ticked: true,
+        msg: 'hello error',
+      },
+      {
+        level: 60,
+        ticked: true,
+        msg: 'hello fatal',
+      },
+    ])
+  })
 })

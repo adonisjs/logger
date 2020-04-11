@@ -19,8 +19,18 @@ declare module '@ioc:Adonis/Core/Logger' {
     PrettyOptions,
     SerializerFn,
     LevelMapping,
+    Bindings,
     DestinationStream,
   } from 'pino'
+
+  /**
+   * The formatters accepted by pino
+   */
+  export type Formatters = {
+    level? (labelName: string, labelNumber: number): Object
+    bindings? (bindings: Bindings): Object,
+    log? (log: Object): Object
+  }
 
   /**
    * Config shape
@@ -36,6 +46,7 @@ declare module '@ioc:Adonis/Core/Logger' {
     customLevels?: {
       [key: string]: number,
     },
+    formatters?: Formatters,
     useOnlyCustomLevels?: boolean,
     redact?: string[] | redactOptions,
     prettyPrint?: boolean | PrettyOptions,
