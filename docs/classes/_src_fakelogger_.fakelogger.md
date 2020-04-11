@@ -28,7 +28,6 @@ the log messages as an array vs writing them to `stdout`.
 
 ### Accessors
 
-* [LOG_VERSION](_src_fakelogger_.fakelogger.md#log_version)
 * [level](_src_fakelogger_.fakelogger.md#level)
 * [levelNumber](_src_fakelogger_.fakelogger.md#levelnumber)
 * [levels](_src_fakelogger_.fakelogger.md#levels)
@@ -83,18 +82,6 @@ ___
 *Inherited from [Logger](_src_logger_.logger.md).[pino](_src_logger_.logger.md#pino)*
 
 ## Accessors
-
-###  LOG_VERSION
-
-• **get LOG_VERSION**(): *number*
-
-*Inherited from [Logger](_src_logger_.logger.md).[LOG_VERSION](_src_logger_.logger.md#log_version)*
-
-Returns the log formatting version
-
-**Returns:** *number*
-
-___
 
 ###  level
 

@@ -1,6 +1,6 @@
 [@adonisjs/logger](../README.md) › ["src/FakeLogger"](_src_fakelogger_.md)
 
-# External module: "src/FakeLogger"
+# Module: "src/FakeLogger"
 
 ## Index
 

@@ -1,6 +1,6 @@
 [@adonisjs/logger](../README.md) › ["src/getPino"](_src_getpino_.md)
 
-# External module: "src/getPino"
+# Module: "src/getPino"
 
 ## Index
 

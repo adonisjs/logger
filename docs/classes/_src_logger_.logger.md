@@ -29,7 +29,6 @@ object using `logger.pino`.
 
 ### Accessors
 
-* [LOG_VERSION](_src_logger_.logger.md#log_version)
 * [level](_src_logger_.logger.md#level)
 * [levelNumber](_src_logger_.logger.md#levelnumber)
 * [levels](_src_logger_.logger.md#levels)
@@ -76,16 +75,6 @@ ___
 • **pino**: *Pino.Logger*
 
 ## Accessors
-
-###  LOG_VERSION
-
-• **get LOG_VERSION**(): *number*
-
-Returns the log formatting version
-
-**Returns:** *number*
-
-___
 
 ###  level
 

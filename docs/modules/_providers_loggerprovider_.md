@@ -1,6 +1,6 @@
 [@adonisjs/logger](../README.md) › ["providers/LoggerProvider"](_providers_loggerprovider_.md)
 
-# External module: "providers/LoggerProvider"
+# Module: "providers/LoggerProvider"
 
 ## Index
 

@@ -4,7 +4,7 @@
 
 ## Index
 
-### External modules
+### Modules
 
 * ["adonis-typings/logger"](modules/_adonis_typings_logger_.md)
 * ["providers/LoggerProvider"](modules/_providers_loggerprovider_.md)
