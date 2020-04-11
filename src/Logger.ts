@@ -98,17 +98,6 @@ export class Logger implements LoggerContract {
   }
 
   /**
-   * Returns the log formatting version
-   */
-  public get LOG_VERSION (): number {
-    if (!this.$config.enabled) {
-      return Pino.LOG_VERSION
-    }
-
-    return this.pino.LOG_VERSION
-  }
-
-  /**
    * Returns a boolean telling if level is enabled or
    * not.
    */

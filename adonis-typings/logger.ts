@@ -63,7 +63,6 @@ declare module '@ioc:Adonis/Core/Logger' {
     levelNumber: number,
     levels: LevelMapping,
     pinoVersion: string,
-    LOG_VERSION: number,
 
     log (level: string, message: string, ...values: any[]): void
     log (level: string, mergingObject: any, message: string, ...values: any[]): void
