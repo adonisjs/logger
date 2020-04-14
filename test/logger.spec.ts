@@ -401,4 +401,66 @@ test.group('Logger', () => {
       },
     ])
   })
+
+  test('fake logger should ignore pretty print', (assert) => {
+    const logger = new FakeLogger({
+      name: 'adonis-logger',
+      level: 'info',
+      messageKey: 'msg',
+      enabled: true,
+      prettyPrint: require('pino-pretty'),
+    })
+
+    logger.info('hello info')
+    assert.deepEqual(logger.logs.map(({ level, msg }) => {
+      return { level, msg }
+    }), [
+      {
+        level: 30,
+        msg: 'hello info',
+      },
+    ])
+  })
+
+  test('abstract logger should ignore pretty print', (assert) => {
+    const logger = new Logger({
+      name: 'adonis-logger',
+      level: 'info',
+      messageKey: 'msg',
+      enabled: false,
+      prettyPrint: require('pino-pretty'),
+    })
+
+    logger.info('hello info')
+    logger.debug('hello debug')
+    logger.fatal('hello fatal')
+    logger.error('hello error')
+    logger.warn('hello warn')
+    logger.trace('hello trace')
+
+    assert.equal(logger.level, 'info')
+    assert.equal(logger.levelNumber, 30)
+    assert.deepEqual(logger.child({}), logger)
+    assert.deepEqual(logger.bindings(), {})
+    assert.isFalse(logger.isLevelEnabled('info'))
+    assert.equal(logger.pinoVersion, '6.2.0')
+    assert.deepEqual(logger.levels, {
+      labels: {
+        10: 'trace',
+        20: 'debug',
+        30: 'info',
+        40: 'warn',
+        50: 'error',
+        60: 'fatal',
+      },
+      values: {
+        fatal: 60,
+        error: 50,
+        warn: 40,
+        info: 30,
+        debug: 20,
+        trace: 10,
+      },
+    })
+  })
 })

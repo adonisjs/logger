@@ -43,13 +43,13 @@ export class Logger implements LoggerContract {
   public pino: Pino.Logger
 
   constructor (
-    protected $config: LoggerConfig,
+    protected config: LoggerConfig,
     pino?: Pino.Logger,
   ) {
-    if (!this.$config.enabled) {
+    if (!this.config.enabled) {
       this.pino = abstractLogging
     } else {
-      this.pino = pino || getPino(this.$config)
+      this.pino = pino || getPino(this.config)
     }
   }
 
@@ -57,7 +57,7 @@ export class Logger implements LoggerContract {
    * A map of levels
    */
   public get levels (): Pino.LevelMapping {
-    if (!this.$config.enabled) {
+    if (!this.config.enabled) {
       return STATIC_LEVELS
     }
     return this.pino.levels
@@ -67,8 +67,8 @@ export class Logger implements LoggerContract {
    * Returns the current logger level
    */
   public get level (): string {
-    if (!this.$config.enabled) {
-      return this.$config.level
+    if (!this.config.enabled) {
+      return this.config.level
     }
 
     return this.pino.level
@@ -78,8 +78,8 @@ export class Logger implements LoggerContract {
    * Returns the current logger level number
    */
   public get levelNumber (): number {
-    if (!this.$config.enabled) {
-      return STATIC_LEVELS.values[this.$config.level]
+    if (!this.config.enabled) {
+      return STATIC_LEVELS.values[this.config.level]
     }
 
     return this.pino.levelVal
@@ -97,7 +97,7 @@ export class Logger implements LoggerContract {
    * not.
    */
   public isLevelEnabled (level: string): boolean {
-    if (!this.$config.enabled) {
+    if (!this.config.enabled) {
       return false
     }
 
@@ -181,17 +181,17 @@ export class Logger implements LoggerContract {
     serializers?: { [key: string]: Pino.SerializerFn },
     [key: string]: any,
   }) {
-    if (!this.$config.enabled) {
+    if (!this.config.enabled) {
       return this
     }
-    return new Logger(this.$config, this.pino.child(bindings))
+    return new Logger(this.config, this.pino.child(bindings))
   }
 
   /**
    * Returns default bindings for the logger
    */
   public bindings (): { [key: string]: any } {
-    if (!this.$config.enabled) {
+    if (!this.config.enabled) {
       return {}
     }
     return (this.pino as any)['bindings']()

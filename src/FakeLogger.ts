@@ -26,6 +26,7 @@ export class FakeLogger extends Logger {
      */
     if (!pino) {
       const cloned = Object.assign({}, config, {
+        prettyPrint: false,
         stream: {
           logs: [],
           write: function writer (line: string) {
@@ -45,7 +46,7 @@ export class FakeLogger extends Logger {
    * An array of in-memory logs
    */
   public get logs (): any[] {
-    return (this.$config.stream as any).logs
+    return (this.config.stream as any).logs
   }
 
   /**
@@ -57,16 +58,16 @@ export class FakeLogger extends Logger {
     serializers?: { [key: string]: Pino.SerializerFn },
     [key: string]: any,
   }) {
-    if (!this.$config.enabled) {
+    if (!this.config.enabled) {
       return this
     }
-    return new FakeLogger(this.$config, this.pino.child(bindings))
+    return new FakeLogger(this.config, this.pino.child(bindings))
   }
 
   /**
    * Clear in-memory logs
    */
   public clear () {
-    (this.$config.stream as any).logs = []
+    (this.config.stream as any).logs = []
   }
 }
