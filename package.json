@@ -72,7 +72,7 @@
     "anyBranch": false
   },
   "dependencies": {
-    "@types/pino": "^5.17.0",
+    "@types/pino": "^6.0.0",
     "abstract-logging": "^2.0.0",
     "pino": "^6.2.0"
   },
