@@ -52,6 +52,14 @@ declare module '@ioc:Adonis/Core/Logger' {
   }
 
   /**
+   * Generic interface for all log levels
+   */
+  interface LogLevelFn {
+    (message: string, ...values: any[]): void
+    (mergingObject: any, message: string, ...values: any[]): void
+  }
+
+  /**
    * Logger interface that main and fake logger implements
    */
   export interface LoggerContract {
@@ -61,25 +69,19 @@ declare module '@ioc:Adonis/Core/Logger' {
     pinoVersion: string,
 
     log (level: string, message: string, ...values: any[]): void
-    log (level: string, mergingObject: any, message: string, ...values: any[]): void
+    log (level: string, mergingObject: object, message: string, ...values: any[]): void
 
-    trace (message: string, ...values: any[]): void
-    trace (mergingObject: any, message: string, ...values: any[]): void
+    trace: LogLevelFn
 
-    debug (message: string, ...values: any[]): void
-    debug (mergingObject: any, message: string, ...values: any[]): void
+    debug: LogLevelFn
 
-    info (message: string, ...values: any[]): void
-    info (mergingObject: any, message: string, ...values: any[]): void
+    info: LogLevelFn
 
-    warn (message: string, ...values: any[]): void
-    warn (mergingObject: any, message: string, ...values: any[]): void
+    warn: LogLevelFn
 
-    error (message: string, ...values: any[]): void
-    error (mergingObject: any, message: string, ...values: any[]): void
+    error: LogLevelFn
 
-    fatal (message: string, ...values: any[]): void
-    fatal (mergingObject: any, message: string, ...values: any[]): void
+    fatal: LogLevelFn
 
     isLevelEnabled (level: string): boolean,
     bindings (): { [key: string]: any },

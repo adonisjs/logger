@@ -70,6 +70,58 @@ test.group('Logger', () => {
     ])
   })
 
+  test('log message as object at all log levels', (assert) => {
+    const messages: string[] = []
+
+    const logger = new Logger({
+      name: 'adonis-logger',
+      level: 'trace',
+      messageKey: 'msg',
+      enabled: true,
+      stream: getFakeStream((message) => {
+        messages.push(message.trim())
+        return true
+      }),
+    })
+
+    logger.trace({ hello: 'trace' })
+    logger.debug({ hello: 'debug' })
+    logger.info({ hello: 'info' })
+    logger.warn({ hello: 'warn' })
+    logger.error({ hello: 'error' })
+    logger.fatal({ hello: 'fatal' })
+
+    assert.deepEqual(messages.map((m) => {
+      const parsed = JSON.parse(m)
+      return { level: parsed.level, hello: parsed.hello }
+    }), [
+      {
+        level: 10,
+        hello: 'trace',
+      },
+      {
+        level: 20,
+        hello: 'debug',
+      },
+      {
+        level: 30,
+        hello: 'info',
+      },
+      {
+        level: 40,
+        hello: 'warn',
+      },
+      {
+        level: 50,
+        hello: 'error',
+      },
+      {
+        level: 60,
+        hello: 'fatal',
+      },
+    ])
+  })
+
   test('return current log level', (assert) => {
     const logger = new Logger({
       name: 'adonis-logger',

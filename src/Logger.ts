@@ -108,8 +108,8 @@ export class Logger implements LoggerContract {
    * Log message for any named level
    */
   public log (level: string, message: string, ...values: any[]): void
-  public log (level: string, mergingObject: any, message: string, ...values: any[]): void
-  public log (level: string, mergingObject: any, message: string, ...values: any[]): void {
+  public log (level: string, mergingObject: object, message?: string, ...values: any[]): void
+  public log (level: string, mergingObject: any, message?: string, ...values: any[]): void {
     if (values.length) {
       this.pino[level](mergingObject, message, ...values)
     } else if (message) {
@@ -123,8 +123,8 @@ export class Logger implements LoggerContract {
    * Log message at trace level
    */
   public trace (message: string, ...values: any[]): void
-  public trace (mergingObject: any, message: string, ...values: any[]): void
-  public trace (mergingObject: any, message: string, ...values: any[]): void {
+  public trace (mergingObject: object, message?: string, ...values: any[]): void
+  public trace (mergingObject: any, message?: string, ...values: any[]): void {
     this.log('trace', mergingObject, message, ...values)
   }
 
@@ -132,8 +132,8 @@ export class Logger implements LoggerContract {
    * Log message at debug level
    */
   public debug (message: string, ...values: any[]): void
-  public debug (mergingObject: any, message: string, ...values: any[]): void
-  public debug (mergingObject: any, message: string, ...values: any[]): void {
+  public debug (mergingObject: object, message?: string, ...values: any[]): void
+  public debug (mergingObject: any, message?: string, ...values: any[]): void {
     this.log('debug', mergingObject, message, ...values)
   }
 
@@ -141,8 +141,8 @@ export class Logger implements LoggerContract {
    * Log message at info level
    */
   public info (message: string, ...values: any[]): void
-  public info (mergingObject: any, message: string, ...values: any[]): void
-  public info (mergingObject: any, message: string, ...values: any[]): void {
+  public info (mergingObject: object, message?: string, ...values: any[]): void
+  public info (mergingObject: any, message?: string, ...values: any[]): void {
     this.log('info', mergingObject, message, ...values)
   }
 
@@ -150,8 +150,8 @@ export class Logger implements LoggerContract {
    * Log message at warn level
    */
   public warn (message: string, ...values: any[]): void
-  public warn (mergingObject: any, message: string, ...values: any[]): void
-  public warn (mergingObject: any, message: string, ...values: any[]): void {
+  public warn (mergingObject: object, message?: string, ...values: any[]): void
+  public warn (mergingObject: any, message?: string, ...values: any[]): void {
     this.log('warn', mergingObject, message, ...values)
   }
 
@@ -159,8 +159,8 @@ export class Logger implements LoggerContract {
    * Log message at error level
    */
   public error (message: string, ...values: any[]): void
-  public error (mergingObject: any, message: string, ...values: any[]): void
-  public error (mergingObject: any, message: string, ...values: any[]): void {
+  public error (mergingObject: object, message?: string, ...values: any[]): void
+  public error (mergingObject: any, message?: string, ...values: any[]): void {
     this.log('error', mergingObject, message, ...values)
   }
 
@@ -168,8 +168,8 @@ export class Logger implements LoggerContract {
    * Log message at fatal level
    */
   public fatal (message: string, ...values: any[]): void
-  public fatal (mergingObject: any, message: string, ...values: any[]): void
-  public fatal (mergingObject: any, message: string, ...values: any[]): void {
+  public fatal (mergingObject: object, message?: string, ...values: any[]): void
+  public fatal (mergingObject: any, message?: string, ...values: any[]): void {
     this.log('fatal', mergingObject, message, ...values)
   }
 
