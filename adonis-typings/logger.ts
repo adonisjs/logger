@@ -56,7 +56,7 @@ declare module '@ioc:Adonis/Core/Logger' {
    */
   interface LogLevelFn {
     (message: string, ...values: any[]): void
-    (mergingObject: any, message: string, ...values: any[]): void
+    (mergingObject: object, message?: string, ...values: any[]): void
   }
 
   /**
