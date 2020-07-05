@@ -73,6 +73,46 @@ test.group('Logger', () => {
 		)
 	})
 
+	test('handle sprintf subsitutes', (assert) => {
+		const messages: string[] = []
+
+		const logger = new Logger({
+			name: 'adonis-logger',
+			level: 'trace',
+			messageKey: 'msg',
+			enabled: true,
+			stream: getFakeStream((message) => {
+				messages.push(message.trim())
+				return true
+			}),
+		})
+
+		logger.info('hello %s', 'info')
+		logger.info('hello %s %o', 'info', { url: '/' })
+		logger.info('hello %s %j', 'info', { url: '/' })
+
+		assert.deepEqual(
+			messages.map((m) => {
+				const parsed = JSON.parse(m)
+				return { level: parsed.level, msg: parsed.msg }
+			}),
+			[
+				{
+					level: 30,
+					msg: 'hello info',
+				},
+				{
+					level: 30,
+					msg: `hello info ${JSON.stringify({ url: '/' })}`,
+				},
+				{
+					level: 30,
+					msg: `hello info ${JSON.stringify({ url: '/' })}`,
+				},
+			]
+		)
+	})
+
 	test('return current log level', (assert) => {
 		const logger = new Logger({
 			name: 'adonis-logger',
