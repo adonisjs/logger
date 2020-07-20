@@ -82,7 +82,7 @@ declare module '@ioc:Adonis/Core/Logger' {
 		fatal(mergingObject: any, message: string, ...values: any[]): void
 
 		isLevelEnabled(level: string): boolean
-		bindings(): { [key: string]: any }
+		bindings(): Bindings
 		child(bindings: {
 			level?: Level | string
 			serializers?: { [key: string]: SerializerFn }

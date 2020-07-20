@@ -187,10 +187,11 @@ export class Logger implements LoggerContract {
 	/**
 	 * Returns default bindings for the logger
 	 */
-	public bindings(): { [key: string]: any } {
+	public bindings(): Pino.Bindings {
 		if (!this.config.enabled) {
 			return {}
 		}
-		return (this.pino as any)['bindings']()
+
+		return this.pino.bindings()
 	}
 }
