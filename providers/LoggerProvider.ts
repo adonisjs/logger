@@ -8,14 +8,30 @@
  */
 
 import { IocContract } from '@adonisjs/fold'
-import { Logger } from '../src/Logger'
 
 export default class LoggerProvider {
 	constructor(protected container: IocContract) {}
 
+	/**
+	 * Ensure config is valid
+	 */
+	private validateConfig(config: any) {
+		if (config.name === undefined || config.enabled === undefined || config.level === undefined) {
+			const { InvalidConfigException } = require('../src/Exceptions/InvalidConfigException')
+			throw InvalidConfigException.invoke()
+		}
+	}
+
+	/**
+	 * Register logger
+	 */
 	public register() {
 		this.container.singleton('Adonis/Core/Logger', () => {
-			return new Logger(this.container.use('Adonis/Core/Config').get('app.logger', {}))
+			const config = this.container.use('Adonis/Core/Config').get('app.logger', {})
+			this.validateConfig(config)
+
+			const { Logger } = require('../src/Logger')
+			return new Logger(config)
 		})
 	}
 }
