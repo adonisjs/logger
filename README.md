@@ -6,7 +6,7 @@
 
 <div align="center">
   <h3>AdonisJS Logger</h3>
-  <p>AdonisJS logger built on top of [pino](http://getpino.io/#/) for speed and minimal runtime overhead.</p>
+  <p>AdonisJS logger built on top of <a href="http://getpino.io/#/">pino</a> for speed and minimal runtime overhead.</p>
 </div>
 
 <br />
