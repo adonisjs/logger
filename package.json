@@ -1,6 +1,6 @@
 {
 	"name": "@adonisjs/logger",
-	"version": "2.0.7",
+	"version": "2.1.0",
 	"description": "Logger built on top of pino to be used by AdonisJs",
 	"main": "build/providers/LoggerProvider.js",
 	"files": [
@@ -99,6 +99,6 @@
 	},
 	"homepage": "https://github.com/adonisjs/logger#readme",
 	"adonisjs": {
-    "exceptions": "./build/exceptions.json"
-  }
+		"exceptions": "./build/exceptions.json"
+	}
 }
