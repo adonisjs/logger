@@ -2,14 +2,13 @@
 	"name": "@adonisjs/logger",
 	"version": "2.1.0",
 	"description": "Logger built on top of pino to be used by AdonisJs",
-	"main": "build/providers/LoggerProvider.js",
+	"main": "build/index.js",
 	"files": [
 		"build/adonis-typings",
 		"build/providers",
 		"build/src",
-		"build/standalone.d.ts",
-		"build/standalone.js",
-		"build/exceptions.json"
+		"build/index.d.ts",
+		"build/index.js"
 	],
 	"scripts": {
 		"mrm": "mrm --preset=@adonisjs/mrm-preset",
@@ -36,7 +35,6 @@
 	"license": "MIT",
 	"devDependencies": {
 		"@adonisjs/config": "^1.1.0",
-		"@adonisjs/fold": "^6.3.5",
 		"@adonisjs/mrm-preset": "^2.4.0",
 		"@adonisjs/require-ts": "^1.0.0",
 		"@types/node": "^14.11.2",
@@ -100,5 +98,9 @@
 	"homepage": "https://github.com/adonisjs/logger#readme",
 	"adonisjs": {
 		"exceptions": "./build/exceptions.json"
+	},
+	"publishConfig": {
+		"access": "public",
+		"tag": "next"
 	}
 }

@@ -9,7 +9,7 @@
 
 import test from 'japa'
 import { Writable } from 'stream'
-import { Logger, FakeLogger } from '../standalone'
+import { Logger, FakeLogger } from '../index'
 
 function getFakeStream(fn: (line: string) => boolean) {
 	const stream = new Writable()
