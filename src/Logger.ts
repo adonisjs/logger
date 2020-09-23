@@ -72,6 +72,18 @@ export class Logger implements LoggerContract {
 	}
 
 	/**
+	 * Update logger level
+	 */
+	public set level(level: string) {
+		if (!this.config.enabled) {
+			this.config.level = level
+			return
+		}
+
+		this.pino.level = level
+	}
+
+	/**
 	 * Returns the current logger level number
 	 */
 	public get levelNumber(): number {

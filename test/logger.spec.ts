@@ -124,6 +124,17 @@ test.group('Logger', () => {
 		assert.equal(logger.levelNumber, 10)
 	})
 
+	test('find if log level falls in the given criteria', (assert) => {
+		const logger = new Logger({
+			name: 'adonis-logger',
+			level: 'trace',
+			messageKey: 'msg',
+			enabled: true,
+		})
+
+		assert.isTrue(logger.isLevelEnabled('debug'))
+	})
+
 	test('do not log below the set level', (assert) => {
 		const messages: string[] = []
 
@@ -529,5 +540,54 @@ test.group('Logger', () => {
 				trace: 10,
 			},
 		})
+	})
+
+	test('update log level at runtime', (assert) => {
+		const messages: string[] = []
+
+		const logger = new Logger({
+			name: 'adonis-logger',
+			level: 'trace',
+			messageKey: 'msg',
+			enabled: true,
+			stream: getFakeStream((message) => {
+				messages.push(message.trim())
+				return true
+			}),
+		})
+
+		logger.level = 'info'
+
+		logger.trace('hello trace')
+		logger.debug('hello debug')
+		logger.info('hello info')
+		logger.warn('hello warn')
+		logger.error('hello error')
+		logger.fatal('hello fatal')
+
+		assert.deepEqual(
+			messages.map((m) => {
+				const parsed = JSON.parse(m)
+				return { level: parsed.level, msg: parsed.msg }
+			}),
+			[
+				{
+					level: 30,
+					msg: 'hello info',
+				},
+				{
+					level: 40,
+					msg: 'hello warn',
+				},
+				{
+					level: 50,
+					msg: 'hello error',
+				},
+				{
+					level: 60,
+					msg: 'hello fatal',
+				},
+			]
+		)
 	})
 })
