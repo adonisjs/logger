@@ -28,6 +28,8 @@ declare module '@ioc:Adonis/Core/Logger' {
 		log?(log: Object): Object
 	}
 
+	export type TimestampKeywords = 'iso' | 'unix' | 'epoch'
+
 	/**
 	 * Config shape
 	 */
@@ -38,7 +40,7 @@ declare module '@ioc:Adonis/Core/Logger' {
 		messageKey?: string
 		safe?: boolean
 		crlf?: boolean
-		timestamp?: TimeFn | boolean
+		timestamp?: TimeFn | TimestampKeywords | boolean
 		customLevels?: {
 			[key: string]: number
 		}

@@ -590,4 +590,23 @@ test.group('Logger', () => {
 			]
 		)
 	})
+
+	test('format timestamp using timestamp keywords', (assert) => {
+		const messages: string[] = []
+
+		const logger = new Logger({
+			name: 'adonis-logger',
+			level: 'trace',
+			messageKey: 'msg',
+			enabled: true,
+			timestamp: 'unix',
+			stream: getFakeStream((message) => {
+				messages.push(message.trim())
+				return true
+			}),
+		})
+
+		logger.info('hello trace')
+		assert.isNumber(JSON.parse(messages[0]).time)
+	})
 })
