@@ -79,7 +79,7 @@
 	},
 	"dependencies": {
 		"@poppinss/utils": "^2.5.9",
-		"@types/pino": "^6.3.4",
+		"@types/pino": "^6.3.5",
 		"abstract-logging": "^2.0.1",
 		"pino": "^6.7.0"
 	},
