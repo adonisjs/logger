@@ -51,7 +51,7 @@ declare module '@ioc:Adonis/Core/Logger' {
     base?: { [key: string]: any } | null
     serializers?: { [key: string]: SerializerFn }
     stream?: DestinationStream
-  }
+  } & { [key: string]: any }
 
   /**
    * Logger interface that main and fake logger implements
