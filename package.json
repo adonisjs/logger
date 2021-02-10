@@ -34,25 +34,25 @@
 	"author": "virk,adonisjs",
 	"license": "MIT",
 	"devDependencies": {
-		"@adonisjs/mrm-preset": "^2.4.0",
-		"@adonisjs/require-ts": "^1.1.0",
-		"@types/node": "^14.14.9",
-		"commitizen": "^4.2.2",
+		"@adonisjs/mrm-preset": "^3.0.0",
+		"@adonisjs/require-ts": "^2.0.2",
+		"@types/node": "^14.14.25",
+		"commitizen": "^4.2.3",
 		"cz-conventional-changelog": "^3.3.0",
 		"del-cli": "^3.0.1",
-		"eslint": "^7.14.0",
-		"eslint-config-prettier": "^6.15.0",
-		"eslint-plugin-adonis": "^1.0.15",
-		"eslint-plugin-prettier": "^3.1.4",
+		"eslint": "^7.19.0",
+		"eslint-config-prettier": "^7.2.0",
+		"eslint-plugin-adonis": "^1.2.0",
+		"eslint-plugin-prettier": "^3.3.1",
 		"github-label-sync": "^2.0.0",
-		"husky": "^4.3.0",
+		"husky": "^5.0.9",
 		"japa": "^3.1.1",
-		"mrm": "^2.5.12",
-		"np": "^7.0.0",
+		"mrm": "^2.5.18",
+		"np": "^7.3.0",
 		"npm-audit-html": "^1.5.0",
-		"pino-pretty": "^4.3.0",
-		"prettier": "^2.2.0",
-		"typescript": "^4.1.2"
+		"pino-pretty": "^4.5.0",
+		"prettier": "^2.2.1",
+		"typescript": "^4.1.4"
 	},
 	"nyc": {
 		"exclude": [
@@ -78,10 +78,10 @@
 		"anyBranch": false
 	},
 	"dependencies": {
-		"@poppinss/utils": "^2.5.9",
-		"@types/pino": "^6.3.4",
+		"@poppinss/utils": "^3.0.2",
+		"@types/pino": "^6.3.5",
 		"abstract-logging": "^2.0.1",
-		"pino": "^6.7.0"
+		"pino": "^6.11.1"
 	},
 	"directories": {
 		"doc": "docs",
