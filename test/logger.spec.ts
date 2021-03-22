@@ -330,7 +330,7 @@ test.group('Logger', () => {
     assert.deepEqual(logger.child({}), logger)
     assert.deepEqual(logger.bindings(), {})
     assert.isFalse(logger.isLevelEnabled('info'))
-    assert.equal(logger.pinoVersion, '6.11.1')
+    assert.equal(logger.pinoVersion, '6.11.2')
     assert.deepEqual(logger.levels, {
       labels: {
         10: 'trace',
@@ -521,7 +521,7 @@ test.group('Logger', () => {
     assert.deepEqual(logger.child({}), logger)
     assert.deepEqual(logger.bindings(), {})
     assert.isFalse(logger.isLevelEnabled('info'))
-    assert.equal(logger.pinoVersion, '6.11.1')
+    assert.equal(logger.pinoVersion, '6.11.2')
     assert.deepEqual(logger.levels, {
       labels: {
         10: 'trace',
