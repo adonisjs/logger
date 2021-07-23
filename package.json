@@ -36,7 +36,7 @@
 	"devDependencies": {
 		"@adonisjs/mrm-preset": "^4.1.2",
 		"@adonisjs/require-ts": "^2.0.7",
-		"@types/node": "^16.3.3",
+		"@types/node": "^16.4.1",
 		"del-cli": "^4.0.1",
 		"eslint": "^7.31.0",
 		"eslint-config-prettier": "^8.3.0",
@@ -45,9 +45,9 @@
 		"github-label-sync": "^2.0.1",
 		"husky": "^7.0.1",
 		"japa": "^3.1.1",
-		"mrm": "^3.0.2",
+		"mrm": "^3.0.5",
 		"np": "^7.5.0",
-		"pino-pretty": "^5.1.1",
+		"pino-pretty": "^5.1.2",
 		"prettier": "^2.3.2",
 		"typescript": "^4.3.5"
 	},
@@ -74,10 +74,10 @@
 		"anyBranch": false
 	},
 	"dependencies": {
-		"@poppinss/utils": "^3.1.4",
+		"@poppinss/utils": "^3.1.5",
 		"@types/pino": "^6.3.9",
 		"abstract-logging": "^2.0.1",
-		"pino": "^6.12.0"
+		"pino": "^6.13.0"
 	},
 	"directories": {
 		"doc": "docs",
