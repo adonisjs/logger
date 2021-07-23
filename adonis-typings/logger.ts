@@ -85,11 +85,17 @@ declare module '@ioc:Adonis/Core/Logger' {
 
     isLevelEnabled(level: string): boolean
     bindings(): Bindings
-    child(bindings: {
-      level?: Level | string
-      serializers?: { [key: string]: SerializerFn }
-      [key: string]: any
-    }): LoggerContract
+    child(
+      bindings: {
+        level?: Level | string
+        serializers?: { [key: string]: SerializerFn }
+        [key: string]: any
+      },
+      options?: {
+        redact?: string[] | redactOptions
+        serializers?: { [key: string]: SerializerFn }
+      }
+    ): LoggerContract
   }
 
   const Logger: LoggerContract

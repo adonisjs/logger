@@ -185,15 +185,22 @@ export class Logger implements LoggerContract {
   /**
    * Returns a child logger instance
    */
-  public child(bindings: {
-    level?: Pino.Level | string
-    serializers?: { [key: string]: Pino.SerializerFn }
-    [key: string]: any
-  }) {
+  public child(
+    bindings: {
+      level?: Pino.Level | string
+      serializers?: { [key: string]: Pino.SerializerFn }
+      [key: string]: any
+    },
+    options?: {
+      redact?: string[] | Pino.redactOptions
+      serializers?: { [key: string]: Pino.SerializerFn }
+    }
+  ) {
     if (!this.config.enabled) {
       return this
     }
-    return new Logger(this.config, this.pino.child(bindings))
+
+    return new Logger(this.config, (this.pino.child as any)(bindings, options))
   }
 
   /**

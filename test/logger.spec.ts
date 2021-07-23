@@ -239,6 +239,64 @@ test.group('Logger', () => {
     )
   })
 
+  test('use custom redact options with a child logger', (assert) => {
+    const messages: string[] = []
+
+    const logger = new Logger({
+      name: 'adonis-logger',
+      level: 'info',
+      messageKey: 'msg',
+      enabled: true,
+      stream: getFakeStream((message) => {
+        messages.push(message.trim())
+        return true
+      }),
+    })
+
+    const child = logger.child(
+      {},
+      {
+        redact: ['password'],
+      }
+    )
+
+    child.trace({ password: 'secret' }, 'hello trace')
+    child.debug({ password: 'secret' }, 'hello debug')
+    child.info({ password: 'secret' }, 'hello info')
+    child.warn({ password: 'secret' }, 'hello warn')
+    child.error({ password: 'secret' }, 'hello error')
+    child.fatal({ password: 'secret' }, 'hello fatal')
+
+    assert.deepEqual(
+      messages.map((m) => {
+        const parsed = JSON.parse(m)
+        return { level: parsed.level, msg: parsed.msg, password: parsed.password }
+      }),
+      [
+        {
+          level: 30,
+          msg: 'hello info',
+          password: '[Redacted]',
+        },
+        {
+          level: 40,
+          msg: 'hello warn',
+          password: '[Redacted]',
+        },
+        {
+          level: 50,
+          msg: 'hello error',
+          password: '[Redacted]',
+        },
+        {
+          level: 60,
+          msg: 'hello fatal',
+          password: '[Redacted]',
+        },
+      ]
+    )
+  })
+
   test('log using fake logger', (assert) => {
     const logger = new FakeLogger({
       name: 'adonis-logger',
@@ -330,7 +388,7 @@ test.group('Logger', () => {
     assert.deepEqual(logger.child({}), logger)
     assert.deepEqual(logger.bindings(), {})
     assert.isFalse(logger.isLevelEnabled('info'))
-    assert.equal(logger.pinoVersion, '6.12.0')
+    assert.equal(logger.pinoVersion, '6.13.0')
     assert.deepEqual(logger.levels, {
       labels: {
         10: 'trace',
@@ -521,7 +579,7 @@ test.group('Logger', () => {
     assert.deepEqual(logger.child({}), logger)
     assert.deepEqual(logger.bindings(), {})
     assert.isFalse(logger.isLevelEnabled('info'))
-    assert.equal(logger.pinoVersion, '6.12.0')
+    assert.equal(logger.pinoVersion, '6.13.0')
     assert.deepEqual(logger.levels, {
       labels: {
         10: 'trace',
