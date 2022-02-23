@@ -79,7 +79,7 @@
 		"@poppinss/utils": "^4.0.2",
 		"@types/pino": "^6.3.12",
 		"abstract-logging": "^2.0.1",
-		"pino": "^6.13.4"
+		"pino": "^6.14.0"
 	},
 	"directories": {
 		"doc": "docs",
