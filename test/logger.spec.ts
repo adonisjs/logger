@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import test from 'japa'
+import { test } from '@japa/runner'
 import { Writable } from 'stream'
 import { Logger, FakeLogger } from '../index'
 
@@ -18,7 +18,7 @@ function getFakeStream(fn: (line: string) => boolean) {
 }
 
 test.group('Logger', () => {
-  test('log message at all log levels', (assert) => {
+  test('log message at all log levels', ({ assert }) => {
     const messages: string[] = []
 
     const logger = new Logger({
@@ -73,7 +73,7 @@ test.group('Logger', () => {
     )
   })
 
-  test('handle sprintf subsitutes', (assert) => {
+  test('handle sprintf subsitutes', ({ assert }) => {
     const messages: string[] = []
 
     const logger = new Logger({
@@ -113,7 +113,7 @@ test.group('Logger', () => {
     )
   })
 
-  test('return current log level', (assert) => {
+  test('return current log level', ({ assert }) => {
     const logger = new Logger({
       name: 'adonis-logger',
       level: 'trace',
@@ -124,7 +124,7 @@ test.group('Logger', () => {
     assert.equal(logger.levelNumber, 10)
   })
 
-  test('find if log level falls in the given criteria', (assert) => {
+  test('find if log level falls in the given criteria', ({ assert }) => {
     const logger = new Logger({
       name: 'adonis-logger',
       level: 'trace',
@@ -135,7 +135,7 @@ test.group('Logger', () => {
     assert.isTrue(logger.isLevelEnabled('debug'))
   })
 
-  test('do not log below the set level', (assert) => {
+  test('do not log below the set level', ({ assert }) => {
     const messages: string[] = []
 
     const logger = new Logger({
@@ -182,7 +182,7 @@ test.group('Logger', () => {
     )
   })
 
-  test('change level for a child logger', (assert) => {
+  test('change level for a child logger', ({ assert }) => {
     const messages: string[] = []
 
     const logger = new Logger({
@@ -239,7 +239,7 @@ test.group('Logger', () => {
     )
   })
 
-  test('use custom redact options with a child logger', (assert) => {
+  test('use custom redact options with a child logger', ({ assert }) => {
     const messages: string[] = []
 
     const logger = new Logger({
@@ -297,7 +297,7 @@ test.group('Logger', () => {
     )
   })
 
-  test('log using fake logger', (assert) => {
+  test('log using fake logger', ({ assert }) => {
     const logger = new FakeLogger({
       name: 'adonis-logger',
       level: 'info',
@@ -319,7 +319,7 @@ test.group('Logger', () => {
     )
   })
 
-  test('log using fake child logger', (assert) => {
+  test('log using fake child logger', ({ assert }) => {
     const logger = new FakeLogger({
       name: 'adonis-logger',
       level: 'info',
@@ -343,7 +343,7 @@ test.group('Logger', () => {
     )
   })
 
-  test('clear logs', (assert) => {
+  test('clear logs', ({ assert }) => {
     const logger = new FakeLogger({
       name: 'adonis-logger',
       level: 'info',
@@ -368,7 +368,7 @@ test.group('Logger', () => {
     assert.deepEqual(logger.logs, [])
   })
 
-  test('use abstract logger when enabled is set to false', (assert) => {
+  test('use abstract logger when enabled is set to false', ({ assert }) => {
     const logger = new Logger({
       name: 'adonis-logger',
       level: 'info',
@@ -409,7 +409,7 @@ test.group('Logger', () => {
     })
   })
 
-  test('define custom level formatter', (assert) => {
+  test('define custom level formatter', ({ assert }) => {
     const messages: string[] = []
 
     const logger = new Logger({
@@ -469,7 +469,7 @@ test.group('Logger', () => {
     )
   })
 
-  test('define custom log formatter', (assert) => {
+  test('define custom log formatter', ({ assert }) => {
     const messages: string[] = []
 
     const logger = new Logger({
@@ -535,7 +535,7 @@ test.group('Logger', () => {
     )
   })
 
-  test('fake logger should ignore pretty print', (assert) => {
+  test('fake logger should ignore pretty print', ({ assert }) => {
     const logger = new FakeLogger({
       name: 'adonis-logger',
       level: 'info',
@@ -558,7 +558,7 @@ test.group('Logger', () => {
     )
   })
 
-  test('abstract logger should ignore pretty print', (assert) => {
+  test('abstract logger should ignore pretty print', ({ assert }) => {
     const logger = new Logger({
       name: 'adonis-logger',
       level: 'info',
@@ -600,7 +600,7 @@ test.group('Logger', () => {
     })
   })
 
-  test('update log level at runtime', (assert) => {
+  test('update log level at runtime', ({ assert }) => {
     const messages: string[] = []
 
     const logger = new Logger({
@@ -649,7 +649,7 @@ test.group('Logger', () => {
     )
   })
 
-  test('format timestamp using timestamp keywords', (assert) => {
+  test('format timestamp using timestamp keywords', ({ assert }) => {
     const messages: string[] = []
 
     const logger = new Logger({
