@@ -187,11 +187,11 @@ export class Logger implements LoggerContract {
    */
   public child(
     bindings: {
-      level?: Pino.Level | string
       serializers?: { [key: string]: Pino.SerializerFn }
       [key: string]: any
     },
     options?: {
+      level?: Pino.Level | string
       redact?: string[] | Pino.redactOptions
       serializers?: { [key: string]: Pino.SerializerFn }
     }

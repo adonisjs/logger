@@ -87,11 +87,11 @@ declare module '@ioc:Adonis/Core/Logger' {
     bindings(): Bindings
     child(
       bindings: {
-        level?: Level | string
         serializers?: { [key: string]: SerializerFn }
         [key: string]: any
       },
       options?: {
+        level?: Level | string
         redact?: string[] | redactOptions
         serializers?: { [key: string]: SerializerFn }
       }

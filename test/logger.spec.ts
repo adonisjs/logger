@@ -196,7 +196,7 @@ test.group('Logger', () => {
       }),
     })
 
-    const child = logger.child({ level: 'trace' })
+    const child = logger.child({}, { level: 'trace' })
 
     child.trace('hello trace')
     child.debug('hello debug')
