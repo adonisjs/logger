@@ -2,11 +2,7 @@
 
 <br />
 
-<div align="center">
-
 [![gh-workflow-image]][gh-workflow-url] [![npm-image]][npm-url] ![][typescript-image] [![license-image]][license-url] [![synk-image]][synk-url]
-
-</div>
 
 ## Introduction
 AdonisJS Logger is built on top of [Pino](https://getpino.io/#/). Additionally, we have added support to create multiple named loggers, and make it easy to type-hint Logger as a container dependency.
