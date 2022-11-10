@@ -8,6 +8,8 @@
  */
 
 export { Logger } from './src/logger.js'
+export { targets } from './src/targets/main.js'
+export { defineConfig } from './src/define_config.js'
 export {
   transport,
   destination,

@@ -11,8 +11,7 @@
 	],
 	"exports": {
 		".": "./build/index.js",
-		"./types": "./build/src/types.js",
-		"./targets": "./build/src/targets/main.js"
+		"./types": "./build/src/types.js"
 	},
 	"scripts": {
 		"pretest": "npm run lint",
