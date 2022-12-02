@@ -21,7 +21,7 @@ function getFakeStream(fn: (line: string) => boolean) {
 }
 
 test.group('Logger manager', () => {
-  test('create logger instances from the config', ({ assert, expectTypeOf }) => {
+  test('create logger instances only once', ({ assert, expectTypeOf }) => {
     const config = defineConfig({
       default: 'main',
       loggers: {

@@ -9,6 +9,7 @@
 
 import type { Logger as PinoLogger } from 'pino'
 
+import debug from './debug.js'
 import { Logger } from './logger.js'
 import { LoggerConfig, LoggerManagerConfig } from './types.js'
 
@@ -33,6 +34,7 @@ export class LoggerManager<
   constructor(config: LoggerManagerConfig<KnownLoggers>) {
     super(config.loggers[config.default])
     this.#config = config
+    debug('creating logger manager. config: %O', this.#config)
   }
 
   /**
@@ -50,11 +52,18 @@ export class LoggerManager<
    * Get instance of a logger
    */
   use<K extends keyof KnownLoggers>(logger: K): Logger<KnownLoggers[K]> {
-    if (!this.#loggers.has(logger)) {
-      this.#loggers.set(logger, this.createLogger(logger, this.#config.loggers[logger]))
+    if (this.#loggers.has(logger)) {
+      debug('using logger from cache. name: "%s"', logger)
+      return this.#loggers.get(logger)! as Logger<KnownLoggers[K]>
     }
 
-    return this.#loggers.get(logger)! as Logger<KnownLoggers[K]>
+    const config = this.#config.loggers[logger]
+    debug('creating logger. name: "%s", config: %O', logger, config)
+
+    const loggerInstance = this.createLogger(logger, config)
+    this.#loggers.set(logger, loggerInstance)
+
+    return loggerInstance
   }
 
   /**
