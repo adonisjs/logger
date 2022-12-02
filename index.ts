@@ -11,6 +11,7 @@ export { Logger } from './src/logger.js'
 export { targets } from './src/targets/main.js'
 export { defineConfig } from './src/define_config.js'
 export { LoggerManager } from './src/logger_manager.js'
+export { InvalidLoggerConfigException } from './src/exceptions/invalid_logger_config.js'
 export {
   transport,
   destination,
