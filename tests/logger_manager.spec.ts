@@ -11,6 +11,7 @@ import { test } from '@japa/runner'
 import { Writable } from 'node:stream'
 
 import { Logger } from '../index.js'
+import { LoggerConfig } from '../src/types.js'
 import { defineConfig } from '../src/define_config.js'
 import { LoggerManager } from '../src/logger_manager.js'
 
@@ -25,19 +26,87 @@ test.group('Logger manager', () => {
     const config = defineConfig({
       default: 'main',
       loggers: {
-        main: {},
-        app: {},
+        main: {
+          level: 'info' as const,
+        },
+        app: {
+          level: 'trace' as const,
+        },
       },
     })
 
     const manager = new LoggerManager(config)
-    expectTypeOf(manager.use).parameters.toEqualTypeOf<['app' | 'main']>()
+    expectTypeOf(manager.use('app')).toEqualTypeOf<Logger<{ level: 'trace' }>>()
+    expectTypeOf(manager.use('main')).toEqualTypeOf<Logger<{ level: 'info' }>>()
+    expectTypeOf(manager.use()).toEqualTypeOf<Logger<LoggerConfig>>()
 
     assert.instanceOf(manager.use('app'), Logger)
     assert.instanceOf(manager.use('main'), Logger)
 
     assert.strictEqual(manager.use('app'), manager.use('app'))
     assert.strictEqual(manager.use('main'), manager.use('main'))
+  })
+
+  test('use default logger', ({ assert }) => {
+    const messages: string[] = []
+
+    const config = defineConfig({
+      default: 'main',
+      loggers: {
+        main: {
+          enabled: true,
+          level: 'trace',
+          desination: getFakeStream((message) => {
+            messages.push(message.trim())
+            return true
+          }),
+        },
+        app: {},
+      },
+    })
+
+    const manager = new LoggerManager(config)
+    const logger = manager.use()
+
+    logger.trace('hello trace')
+    logger.debug('hello debug')
+    logger.info('hello info')
+    logger.warn('hello warn')
+    logger.error('hello error')
+    logger.fatal('hello fatal')
+
+    assert.deepEqual(
+      messages.map((m) => {
+        const parsed = JSON.parse(m)
+        return { level: parsed.level, msg: parsed.msg }
+      }),
+      [
+        {
+          level: 10,
+          msg: 'hello trace',
+        },
+        {
+          level: 20,
+          msg: 'hello debug',
+        },
+        {
+          level: 30,
+          msg: 'hello info',
+        },
+        {
+          level: 40,
+          msg: 'hello warn',
+        },
+        {
+          level: 50,
+          msg: 'hello error',
+        },
+        {
+          level: 60,
+          msg: 'hello fatal',
+        },
+      ]
+    )
   })
 
   test('log using the default logger', ({ assert }) => {

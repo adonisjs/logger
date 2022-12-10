@@ -51,17 +51,21 @@ export class LoggerManager<
   /**
    * Get instance of a logger
    */
-  use<K extends keyof KnownLoggers>(logger: K): Logger<KnownLoggers[K]> {
-    if (this.#loggers.has(logger)) {
+  use<K extends keyof KnownLoggers>(logger: K): Logger<KnownLoggers[K]>
+  use(): Logger<LoggerConfig>
+  use<K extends keyof KnownLoggers>(logger?: K): Logger<KnownLoggers[K]> | Logger<LoggerConfig> {
+    let loggerToUse = logger || this.#config.default
+
+    if (this.#loggers.has(loggerToUse)) {
       debug('using logger from cache. name: "%s"', logger)
-      return this.#loggers.get(logger)! as Logger<KnownLoggers[K]>
+      return this.#loggers.get(loggerToUse)! as Logger<KnownLoggers[K]>
     }
 
-    const config = this.#config.loggers[logger]
+    const config = this.#config.loggers[loggerToUse]
     debug('creating logger. name: "%s", config: %O', logger, config)
 
-    const loggerInstance = this.createLogger(logger, config)
-    this.#loggers.set(logger, loggerInstance)
+    const loggerInstance = this.createLogger(loggerToUse, config)
+    this.#loggers.set(loggerToUse, loggerInstance)
 
     return loggerInstance
   }
