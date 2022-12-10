@@ -7,7 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import { InvalidLoggerConfigException } from './exceptions/invalid_logger_config.js'
+import { RuntimeException } from '@poppinss/utils'
+
 import type { LoggerConfig, LoggerManagerConfig } from './types.js'
 
 /**
@@ -17,18 +18,18 @@ import type { LoggerConfig, LoggerManagerConfig } from './types.js'
 export function defineConfig<KnownLoggers extends Record<string, LoggerConfig>>(
   config: LoggerManagerConfig<KnownLoggers>
 ): LoggerManagerConfig<KnownLoggers> {
-  if (!config.default) {
-    throw new InvalidLoggerConfigException('Missing "default" logger')
+  if (!config.loggers) {
+    throw new RuntimeException('Missing "loggers" property in logger config file')
   }
 
-  if (!config.loggers) {
-    throw new InvalidLoggerConfigException(
-      'Missing list of "loggers". Atleast one logger is required'
+  if (!config.default) {
+    throw new RuntimeException(
+      'Missing "default" property in logger config. Specify a default logger'
     )
   }
 
   if (!config.loggers[config.default]) {
-    throw new InvalidLoggerConfigException(
+    throw new RuntimeException(
       `Missing "loggers.${String(config.default)}". It is referenced by the "default" logger`
     )
   }

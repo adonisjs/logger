@@ -34,15 +34,18 @@ test.group('Define config', () => {
   })
 
   test('raise exception when default logger is missing', ({ assert }) => {
-    // @ts-expect-error
-    assert.throws(() => defineConfig({}), 'Missing "default" logger')
+    assert.throws(
+      // @ts-expect-error
+      () => defineConfig({ loggers: {} }),
+      'Missing "default" property in logger config. Specify a default logger'
+    )
   })
 
   test('raise exception when loggers list is missing', ({ assert }) => {
     assert.throws(
       // @ts-expect-error
       () => defineConfig({ default: 'main' }),
-      'Missing list of "loggers". Atleast one logger is required'
+      'Missing "loggers" property in logger config file'
     )
   })
 
