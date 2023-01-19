@@ -23,4 +23,15 @@ test.group('Logger factory', () => {
     assert.instanceOf(logger, Logger)
     assert.isTrue(logger.isEnabled)
   })
+
+  test('push logs to an array', ({ assert }) => {
+    const logs: string[] = []
+    const logger = new LoggerFactory().pushLogsTo(logs).merge({ enabled: true }).create()
+    logger.info('hello world')
+
+    assert.deepEqual(
+      logs.map((line) => JSON.parse(line).msg),
+      ['hello world']
+    )
+  })
 })

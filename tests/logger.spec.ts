@@ -8,15 +8,9 @@
  */
 
 import { test } from '@japa/runner'
-import { Writable } from 'node:stream'
 import { levels } from '../src/pino.js'
 import { Logger } from '../src/logger.js'
-
-function getFakeStream(fn: (line: string) => boolean) {
-  const stream = new Writable()
-  stream.write = fn
-  return stream
-}
+import { getFakeStream } from '../test_factories/logger.js'
 
 test.group('Logger', () => {
   test('log message at all log levels', ({ assert }) => {

@@ -8,18 +8,12 @@
  */
 
 import { test } from '@japa/runner'
-import { Writable } from 'node:stream'
 
 import { Logger } from '../index.js'
 import { LoggerConfig } from '../src/types.js'
 import { defineConfig } from '../src/define_config.js'
 import { LoggerManager } from '../src/logger_manager.js'
-
-function getFakeStream(fn: (line: string) => boolean) {
-  const stream = new Writable()
-  stream.write = fn
-  return stream
-}
+import { getFakeStream } from '../test_factories/logger.js'
 
 test.group('Logger manager', () => {
   test('create logger instances only once', ({ assert, expectTypeOf }) => {
