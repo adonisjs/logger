@@ -70,7 +70,9 @@ test.group('Targets', () => {
   })
 
   test('create targets array conditionally', ({ assert, expectTypeOf }) => {
-    const pinoTargets = targets().if(false, { level: 'info', target: './', options: {} }).toArray()
+    const pinoTargets = targets()
+      .pushIf(false, { level: 'info', target: './', options: {} })
+      .toArray()
 
     expectTypeOf(pinoTargets).toEqualTypeOf<TransportTargetOptions[]>()
     assert.deepEqual(pinoTargets, [])
@@ -78,8 +80,8 @@ test.group('Targets', () => {
 
   test('create targets array from helper methods', ({ assert, expectTypeOf }) => {
     const pinoTargets = targets()
-      .if(true, targets.file({ destination: './' }))
-      .unless(false, targets.pretty({ destination: './' }))
+      .pushIf(true, targets.file({ destination: './' }))
+      .pushUnless(false, targets.pretty({ destination: './' }))
       .toArray()
 
     expectTypeOf(pinoTargets).toEqualTypeOf<TransportTargetOptions[]>()
@@ -103,8 +105,8 @@ test.group('Targets', () => {
 
   test('create targets lazily', ({ assert, expectTypeOf }) => {
     const pinoTargets = targets()
-      .if(true, () => targets.file({ destination: './' }))
-      .unless(false, () => targets.pretty({ destination: './' }, 'trace'))
+      .pushIf(true, () => targets.file({ destination: './' }))
+      .pushUnless(false, () => targets.pretty({ destination: './' }, 'trace'))
       .toArray()
 
     expectTypeOf(pinoTargets).toEqualTypeOf<TransportTargetOptions[]>()

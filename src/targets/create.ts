@@ -33,7 +33,7 @@ export class Targets {
    * })
    * ```
    */
-  if(conditional: boolean, value: TransportTargetOptions | (() => TransportTargetOptions)) {
+  pushIf(conditional: boolean, value: TransportTargetOptions | (() => TransportTargetOptions)) {
     if (conditional) {
       this.#collection.push(typeof value === 'function' ? value() : value)
     }
@@ -51,7 +51,7 @@ export class Targets {
    * })
    * ```
    */
-  unless(conditional: boolean, value: TransportTargetOptions | (() => TransportTargetOptions)) {
+  pushUnless(conditional: boolean, value: TransportTargetOptions | (() => TransportTargetOptions)) {
     if (!conditional) {
       this.#collection.push(typeof value === 'function' ? value() : value)
     }
