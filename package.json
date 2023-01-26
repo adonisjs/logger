@@ -13,7 +13,7 @@
 	"exports": {
 		".": "./build/index.js",
 		"./types": "./build/src/types.js",
-		"./test_factories/*": "./build/test_factories/*.js"
+		"./factories": "./build/test_factories/main.js"
 	},
 	"scripts": {
 		"pretest": "npm run lint",
