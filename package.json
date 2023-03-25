@@ -1,17 +1,17 @@
 {
 	"name": "@adonisjs/logger",
-	"version": "5.4.2-0",
+	"version": "5.4.2-1",
 	"description": "Logger built on top of pino to be used by AdonisJs",
 	"main": "build/index.js",
 	"type": "module",
 	"files": [
 		"src",
 		"factories",
-    "index.ts",
-    "build/src",
+		"index.ts",
+		"build/src",
 		"build/factories",
 		"build/index.d.ts",
-    "build/index.d.ts.map",
+		"build/index.d.ts.map",
 		"build/index.js"
 	],
 	"exports": {
