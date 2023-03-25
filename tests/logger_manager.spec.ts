@@ -13,7 +13,7 @@ import { Logger } from '../index.js'
 import { LoggerConfig } from '../src/types.js'
 import { defineConfig } from '../src/define_config.js'
 import { LoggerManager } from '../src/logger_manager.js'
-import { getFakeStream } from '../test_factories/logger.js'
+import { getFakeStream } from '../factories/logger.js'
 
 test.group('Logger manager', () => {
   test('create logger instances only once', ({ assert, expectTypeOf }) => {

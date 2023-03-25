@@ -10,7 +10,7 @@
 import { test } from '@japa/runner'
 import { levels } from '../src/pino.js'
 import { Logger } from '../src/logger.js'
-import { getFakeStream } from '../test_factories/logger.js'
+import { getFakeStream } from '../factories/logger.js'
 
 test.group('Logger', () => {
   test('log message at all log levels', ({ assert }) => {
