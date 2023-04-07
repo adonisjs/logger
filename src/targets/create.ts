@@ -18,7 +18,7 @@ export class Targets {
   /**
    * Add target to the list of targets
    */
-  add(value: TransportTargetOptions): this {
+  push(value: TransportTargetOptions): this {
     this.#collection.push(value)
     return this
   }

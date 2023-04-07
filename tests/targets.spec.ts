@@ -57,7 +57,7 @@ test.group('Targets', () => {
   })
 
   test('create targets array', ({ assert, expectTypeOf }) => {
-    const pinoTargets = targets().add({ level: 'info', target: './', options: {} }).toArray()
+    const pinoTargets = targets().push({ level: 'info', target: './', options: {} }).toArray()
     expectTypeOf(pinoTargets).toEqualTypeOf<TransportTargetOptions[]>()
 
     assert.deepEqual(pinoTargets, [
