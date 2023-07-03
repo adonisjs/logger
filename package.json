@@ -1,6 +1,6 @@
 {
 	"name": "@adonisjs/logger",
-	"version": "5.4.2-2",
+	"version": "5.4.2-3",
 	"description": "Logger built on top of pino to be used by AdonisJs",
 	"main": "build/index.js",
 	"type": "module",
@@ -15,15 +15,15 @@
 		"./types": "./build/src/types.js",
 		"./factories": "./build/factories/main.js"
 	},
-  "engines": {
-    "node": ">=18.16.0"
-  },
+	"engines": {
+		"node": ">=18.16.0"
+	},
 	"scripts": {
 		"pretest": "npm run lint",
 		"test": "cross-env NODE_DEBUG=adonisjs:logger c8 npm run vscode:test",
 		"clean": "del-cli build",
-    "typecheck": "tsc --noEmit",
-    "compile": "npm run lint && npm run clean && tsc",
+		"typecheck": "tsc --noEmit",
+		"compile": "npm run lint && npm run clean && tsc",
 		"build": "npm run compile",
 		"release": "np",
 		"version": "npm run build",
