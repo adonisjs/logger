@@ -5,13 +5,9 @@
 	"main": "build/index.js",
 	"type": "module",
 	"files": [
-		"src",
-		"factories",
-		"index.ts",
 		"build/src",
 		"build/factories",
 		"build/index.d.ts",
-		"build/index.d.ts.map",
 		"build/index.js"
 	],
 	"exports": {
@@ -19,6 +15,9 @@
 		"./types": "./build/src/types.js",
 		"./factories": "./build/factories/main.js"
 	},
+  "engines": {
+    "node": ">=18.16.0"
+  },
 	"scripts": {
 		"pretest": "npm run lint",
 		"test": "cross-env NODE_DEBUG=adonisjs:logger c8 npm run vscode:test",
