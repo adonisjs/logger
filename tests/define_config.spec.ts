@@ -9,7 +9,7 @@
 
 import { test } from '@japa/runner'
 import { defineConfig } from '../src/define_config.js'
-import { LoggerConfig, LoggerManagerConfig } from '../src/types.js'
+import type { LoggerManagerConfig } from '../src/types.js'
 
 test.group('Define config', () => {
   test('define logger config', ({ assert, expectTypeOf }) => {
@@ -22,7 +22,7 @@ test.group('Define config', () => {
       },
     })
 
-    expectTypeOf(config).toEqualTypeOf<LoggerManagerConfig<{ main: LoggerConfig }>>()
+    expectTypeOf(config).toEqualTypeOf<LoggerManagerConfig<{ main: { enabled: true } }>>()
     assert.deepEqual(config, {
       default: 'main',
       loggers: {
