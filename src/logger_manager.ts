@@ -19,7 +19,7 @@ import { LoggerConfig, LoggerManagerConfig } from './types.js'
  * are cached forever.
  */
 export class LoggerManager<
-  KnownLoggers extends Record<string, LoggerConfig>
+  KnownLoggers extends Record<string, LoggerConfig>,
 > extends Logger<LoggerConfig> {
   /**
    * Registered config
