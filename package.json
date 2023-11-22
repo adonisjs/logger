@@ -19,7 +19,7 @@
 	},
 	"scripts": {
 		"pretest": "npm run lint",
-		"test": "cross-env NODE_DEBUG=adonisjs:logger c8 npm run vscode:test",
+		"test": "cross-env NODE_DEBUG=adonisjs:logger c8 npm run quick:test",
 		"clean": "del-cli build",
 		"typecheck": "tsc --noEmit",
     "precompile": "npm run lint && npm run clean ",
@@ -31,7 +31,7 @@
 		"prepublishOnly": "npm run build",
 		"lint": "eslint . --ext=.ts",
 		"sync-labels": "github-label-sync --labels .github/labels.json adonisjs/logger",
-		"vscode:test": "node --loader=ts-node/esm bin/test.ts"
+		"quick:test": "node --loader=ts-node/esm bin/test.ts"
 	},
 	"keywords": [
 		"logger",

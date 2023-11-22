@@ -56,4 +56,41 @@ test.group('Define config', () => {
       'Missing "loggers.main". It is referenced by the "default" logger'
     )
   })
+
+  test('inherit level from the main logger when not set on individual target', ({ assert }) => {
+    const config = defineConfig({
+      default: 'main',
+      loggers: {
+        main: {
+          enabled: true,
+          level: 'info',
+          transport: {
+            targets: [
+              {
+                target: 'pino/file',
+              },
+            ],
+          },
+        },
+      },
+    })
+
+    assert.deepEqual(config, {
+      default: 'main',
+      loggers: {
+        main: {
+          enabled: true,
+          level: 'info',
+          transport: {
+            targets: [
+              {
+                target: 'pino/file',
+                level: 'info',
+              },
+            ],
+          },
+        },
+      },
+    })
+  })
 })

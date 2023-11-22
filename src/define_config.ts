@@ -34,5 +34,16 @@ export function defineConfig<KnownLoggers extends Record<string, LoggerConfig>>(
     )
   }
 
+  Object.keys(config.loggers).forEach((loggerName) => {
+    const logger = config.loggers[loggerName]
+    if (logger.transport && 'targets' in logger.transport) {
+      logger.transport.targets.forEach((target) => {
+        if (!target.level) {
+          target.level = logger.level
+        }
+      })
+    }
+  })
+
   return config
 }
