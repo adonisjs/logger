@@ -1,13 +1,13 @@
 {
 	"name": "@adonisjs/logger",
-	"version": "5.4.2-6",
+	"version": "5.4.2-7",
 	"description": "Logger built on top of pino to be used by AdonisJs",
 	"main": "build/index.js",
 	"type": "module",
 	"files": [
 		"build",
-    "!build/bin",
-    "!build/tests"
+		"!build/bin",
+		"!build/tests"
 	],
 	"exports": {
 		".": "./build/index.js",
@@ -22,7 +22,7 @@
 		"test": "cross-env NODE_DEBUG=adonisjs:logger c8 npm run quick:test",
 		"clean": "del-cli build",
 		"typecheck": "tsc --noEmit",
-    "precompile": "npm run lint && npm run clean ",
+		"precompile": "npm run lint && npm run clean ",
 		"compile": "tsup-node && tsc --emitDeclarationOnly --declaration",
 		"build": "npm run compile",
 		"release": "np",
@@ -115,7 +115,7 @@
 		"clean": true,
 		"format": "esm",
 		"dts": false,
-    "sourcemap": true,
+		"sourcemap": true,
 		"target": "esnext"
 	}
 }
