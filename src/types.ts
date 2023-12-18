@@ -22,7 +22,7 @@ export type { TransportTargetOptions, Level, LevelMapping, ChildLoggerOptions, B
 /**
  * Logger config inherited from pino logger options
  */
-export type LoggerConfig = Omit<LoggerOptions, 'browser' | 'timestamp'> & {
+export type LoggerConfig = Omit<LoggerOptions<any>, 'browser' | 'timestamp'> & {
   enabled?: boolean
   desination?: DestinationStream
   timestamp?: TimestampKeywords | boolean | (() => string)

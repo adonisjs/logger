@@ -11,9 +11,9 @@ import { test } from '@japa/runner'
 
 import { Logger } from '../index.js'
 import { LoggerConfig } from '../src/types.js'
+import { getFakeStream } from '../factories/logger.js'
 import { defineConfig } from '../src/define_config.js'
 import { LoggerManager } from '../src/logger_manager.js'
-import { getFakeStream } from '../factories/logger.js'
 
 test.group('Logger manager', () => {
   test('create logger instances only once', ({ assert, expectTypeOf }) => {
@@ -30,6 +30,7 @@ test.group('Logger manager', () => {
     })
 
     const manager = new LoggerManager(config)
+
     expectTypeOf(manager.use('app')).toEqualTypeOf<Logger<{ level: 'trace' }>>()
     expectTypeOf(manager.use('main')).toEqualTypeOf<Logger<{ level: 'info' }>>()
     expectTypeOf(manager.use()).toEqualTypeOf<Logger<LoggerConfig>>()

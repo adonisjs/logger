@@ -29,7 +29,7 @@ export class LoggerManager<
   /**
    * Created loggers. Logger instances are cached forever
    */
-  #loggers: Map<keyof KnownLoggers, Logger<LoggerConfig>> = new Map()
+  #loggers: Map<keyof KnownLoggers, Logger<KnownLoggers[keyof KnownLoggers]>> = new Map()
 
   constructor(config: LoggerManagerConfig<KnownLoggers>) {
     super(config.loggers[config.default])
@@ -58,7 +58,7 @@ export class LoggerManager<
 
     if (this.#loggers.has(loggerToUse)) {
       debug('using logger from cache. name: "%s"', logger)
-      return this.#loggers.get(loggerToUse)! as Logger<KnownLoggers[K]>
+      return this.#loggers.get(loggerToUse)! as Logger<KnownLoggers[K]> | Logger<LoggerConfig>
     }
 
     const config = this.#config.loggers[loggerToUse]
@@ -67,14 +67,17 @@ export class LoggerManager<
     const loggerInstance = this.createLogger(loggerToUse, config)
     this.#loggers.set(loggerToUse, loggerInstance)
 
-    return loggerInstance
+    return loggerInstance as Logger<KnownLoggers[K]> | Logger<LoggerConfig>
   }
 
   /**
    * Create a logger instance from the config. The created instance
    * is not managed by the manager
    */
-  create(config: LoggerConfig, pino?: PinoLogger) {
+  create<Config extends LoggerConfig>(
+    config: Config,
+    pino?: PinoLogger<keyof Config['customLevels'] & string>
+  ) {
     return new Logger(config, pino)
   }
 }
