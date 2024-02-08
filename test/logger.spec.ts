@@ -90,6 +90,7 @@ test.group('Logger', () => {
     logger.info('hello %s', 'info')
     logger.info('hello %s %o', 'info', { url: '/' })
     logger.info('hello %s %j', 'info', { url: '/' })
+    logger.info('total: %d', 0)
 
     assert.deepEqual(
       messages.map((m) => {
@@ -108,6 +109,10 @@ test.group('Logger', () => {
         {
           level: 30,
           msg: `hello info ${JSON.stringify({ url: '/' })}`,
+        },
+        {
+          level: 30,
+          msg: 'total: 0',
         },
       ]
     )
