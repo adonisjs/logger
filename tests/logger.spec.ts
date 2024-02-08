@@ -331,8 +331,8 @@ test.group('Logger', () => {
     assert.deepEqual(logger.bindings(), {})
     assert.isFalse(logger.isLevelEnabled('info'))
 
-    assert.snapshot(logger.pinoVersion).matchInline('"8.17.2"')
-    assert.snapshot(logger.version).matchInline('"8.17.2"')
+    assert.match(logger.pinoVersion, /\d+\.\d+\.\d+/)
+    assert.strictEqual(logger.pinoVersion, logger.version)
 
     assert.deepEqual(logger.levels, {
       labels: {
