@@ -69,7 +69,7 @@ test.group('Logger', () => {
     )
   })
 
-  test('handle sprintf subsitutes', ({ assert }) => {
+  test('handle sprintf substitutes', ({ assert }) => {
     const messages: string[] = []
 
     const logger = new Logger({
@@ -86,6 +86,7 @@ test.group('Logger', () => {
     logger.info('hello %s', 'info')
     logger.info('hello %s %o', 'info', { url: '/' })
     logger.info('hello %s %j', 'info', { url: '/' })
+    logger.info('total: %d', 0)
 
     assert.deepEqual(
       messages.map((m) => {
@@ -104,6 +105,10 @@ test.group('Logger', () => {
         {
           level: 30,
           msg: `hello info ${JSON.stringify({ url: '/' })}`,
+        },
+        {
+          level: 30,
+          msg: 'total: 0',
         },
       ]
     )
@@ -326,8 +331,8 @@ test.group('Logger', () => {
     assert.deepEqual(logger.bindings(), {})
     assert.isFalse(logger.isLevelEnabled('info'))
 
-    assert.snapshot(logger.pinoVersion).matchInline('"8.17.2"')
-    assert.snapshot(logger.version).matchInline('"8.17.2"')
+    assert.match(logger.pinoVersion, /\d+\.\d+\.\d+/)
+    assert.strictEqual(logger.pinoVersion, logger.version)
 
     assert.deepEqual(logger.levels, {
       labels: {

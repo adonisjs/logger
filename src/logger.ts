@@ -173,13 +173,7 @@ export class Logger<Config extends LoggerConfig = LoggerConfig> {
       return
     }
 
-    if (values.length) {
-      ;(this.pino[level] as any)(mergingObject, message, ...values)
-    } else if (message) {
-      ;(this.pino[level] as any)(mergingObject, message)
-    } else {
-      ;(this.pino[level] as any)(mergingObject)
-    }
+    ;(this.pino[level] as any)(mergingObject, message, ...values)
   }
 
   /**
