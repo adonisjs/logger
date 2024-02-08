@@ -119,13 +119,7 @@ export class Logger implements LoggerContract {
   public log(level: string, message: string, ...values: any[]): void
   public log(level: string, mergingObject: any, message: string, ...values: any[]): void
   public log(level: string, mergingObject: any, message: string, ...values: any[]): void {
-    if (values.length) {
-      this.pino[level](mergingObject, message, ...values)
-    } else if (message) {
-      this.pino[level](mergingObject, message)
-    } else {
-      this.pino[level](mergingObject)
-    }
+    this.pino[level](mergingObject, message, ...values)
   }
 
   /**
