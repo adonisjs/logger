@@ -10,6 +10,7 @@
 import { RuntimeException } from '@poppinss/utils'
 
 import type { LoggerConfig, LoggerManagerConfig } from './types.js'
+import debug from './debug.js'
 
 /**
  * Define the logger config. The config object must have a default property
@@ -39,6 +40,7 @@ export function defineConfig<KnownLoggers extends Record<string, LoggerConfig>>(
     if (logger.transport && 'targets' in logger.transport) {
       logger.transport.targets.forEach((target) => {
         if (!target.level) {
+          debug('inherting "%s" target level from "%s" logger', target.target, loggerName)
           target.level = logger.level
         }
       })

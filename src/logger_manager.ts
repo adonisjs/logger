@@ -62,7 +62,7 @@ export class LoggerManager<
     }
 
     const config = this.#config.loggers[loggerToUse]
-    debug('creating logger. name: "%s", config: %O', logger, config)
+    debug('creating logger. name: "%s", config: %O', loggerToUse, config)
 
     const loggerInstance = this.createLogger(loggerToUse, config)
     this.#loggers.set(loggerToUse, loggerInstance)

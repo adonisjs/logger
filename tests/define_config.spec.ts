@@ -10,6 +10,7 @@
 import { test } from '@japa/runner'
 import { defineConfig } from '../src/define_config.js'
 import type { LoggerManagerConfig } from '../src/types.js'
+import { targets } from '../index.js'
 
 test.group('Define config', () => {
   test('define logger config', ({ assert, expectTypeOf }) => {
@@ -86,6 +87,40 @@ test.group('Define config', () => {
               {
                 target: 'pino/file',
                 level: 'info',
+              },
+            ],
+          },
+        },
+      },
+    })
+  })
+
+  test('inherit level from the main logger when using targets helper', ({ assert }) => {
+    const config = defineConfig({
+      default: 'main',
+      loggers: {
+        main: {
+          enabled: true,
+          level: 'info',
+          transport: {
+            targets: targets().push(targets.file()).toArray(),
+          },
+        },
+      },
+    })
+
+    assert.deepEqual(config, {
+      default: 'main',
+      loggers: {
+        main: {
+          enabled: true,
+          level: 'info',
+          transport: {
+            targets: [
+              {
+                target: 'pino/file',
+                level: 'info',
+                options: {},
               },
             ],
           },

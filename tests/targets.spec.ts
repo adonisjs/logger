@@ -14,7 +14,7 @@ import { targets } from '../src/targets/main.js'
 test.group('Targets', () => {
   test('create transport for pino/file', ({ assert }) => {
     assert.deepEqual(targets.file(), {
-      level: 'info',
+      level: undefined,
       options: {},
       target: 'pino/file',
     })
@@ -36,7 +36,7 @@ test.group('Targets', () => {
 
   test('create transport for pino-pretty', ({ assert }) => {
     assert.deepEqual(targets.pretty(), {
-      level: 'info',
+      level: undefined,
       options: {},
       target: 'pino-pretty',
     })
@@ -91,14 +91,14 @@ test.group('Targets', () => {
         options: {
           destination: './',
         },
-        level: 'info',
+        level: undefined,
       },
       {
         target: 'pino-pretty',
         options: {
           destination: './',
         },
-        level: 'info',
+        level: undefined,
       },
     ])
   })
@@ -116,7 +116,7 @@ test.group('Targets', () => {
         options: {
           destination: './',
         },
-        level: 'info',
+        level: undefined,
       },
       {
         target: 'pino-pretty',

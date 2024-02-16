@@ -18,7 +18,7 @@ export function pretty(
 ): TransportTargetOptions {
   return {
     target: 'pino-pretty',
-    level: level || 'info',
+    level: level,
     options: options || {},
   }
 }
