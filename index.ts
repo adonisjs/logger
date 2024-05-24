@@ -18,3 +18,5 @@ export {
   stdSerializers,
   stdTimeFunctions,
 } from './src/pino.js'
+
+export type { Level as LoggerLevel } from './src/types.js'
