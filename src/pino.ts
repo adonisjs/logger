@@ -35,7 +35,7 @@ const TimestampFormatters: { [Keyword in TimestampKeywords]: () => string } = {
 export function createPino<Config extends LoggerConfig>(
   options: Config
 ): PinoLogger<keyof Config['customLevels'] & string> {
-  const { destination, timestamp, ...rest } = options
+  const { destination: dest, timestamp, ...rest } = options
   const pinoOptions: LoggerOptions<any> = Object.assign({}, rest)
 
   /**
@@ -45,7 +45,7 @@ export function createPino<Config extends LoggerConfig>(
     pinoOptions.timestamp = TimestampFormatters[timestamp]
   }
 
-  return destination ? pino(pinoOptions, destination) : pino(pinoOptions)
+  return dest ? pino(pinoOptions, dest) : pino(pinoOptions)
 }
 
 /**
