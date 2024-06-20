@@ -51,7 +51,7 @@ test.group('Logger manager', () => {
         main: {
           enabled: true,
           level: 'trace',
-          desination: getFakeStream((message) => {
+          destination: getFakeStream((message) => {
             messages.push(message.trim())
             return true
           }),
@@ -113,7 +113,7 @@ test.group('Logger manager', () => {
         main: {
           enabled: true,
           level: 'trace',
-          desination: getFakeStream((message) => {
+          destination: getFakeStream((message) => {
             messages.push(message.trim())
             return true
           }),
@@ -173,7 +173,7 @@ test.group('Logger manager', () => {
         main: {
           enabled: false,
           level: 'trace',
-          desination: getFakeStream((message) => {
+          destination: getFakeStream((message) => {
             messages.push(message.trim())
             return true
           }),
@@ -208,7 +208,7 @@ test.group('Logger manager', () => {
         main: {
           enabled: true,
           level: 'trace',
-          desination: getFakeStream((message) => {
+          destination: getFakeStream((message) => {
             messages.push(message.trim())
             return true
           }),
@@ -221,7 +221,7 @@ test.group('Logger manager', () => {
     const logger = manager.create({
       enabled: true,
       level: 'warn',
-      desination: getFakeStream((message) => {
+      destination: getFakeStream((message) => {
         messages.push(message.trim())
         return true
       }),
