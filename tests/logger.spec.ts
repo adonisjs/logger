@@ -21,7 +21,7 @@ test.group('Logger', () => {
       name: 'adonis-logger',
       level: 'trace',
       messageKey: 'msg',
-      desination: getFakeStream((message) => {
+      destination: getFakeStream((message) => {
         messages.push(message.trim())
         return true
       }),
@@ -77,7 +77,7 @@ test.group('Logger', () => {
       name: 'adonis-logger',
       level: 'trace',
       messageKey: 'msg',
-      desination: getFakeStream((message) => {
+      destination: getFakeStream((message) => {
         messages.push(message.trim())
         return true
       }),
@@ -152,7 +152,7 @@ test.group('Logger', () => {
       name: 'adonis-logger',
       level: 'info',
       messageKey: 'msg',
-      desination: getFakeStream((message) => {
+      destination: getFakeStream((message) => {
         messages.push(message.trim())
         return true
       }),
@@ -199,7 +199,7 @@ test.group('Logger', () => {
       name: 'adonis-logger',
       level: 'trace',
       messageKey: 'msg',
-      desination: getFakeStream((message) => {
+      destination: getFakeStream((message) => {
         messages.push(message.trim())
         return true
       }),
@@ -256,7 +256,7 @@ test.group('Logger', () => {
       name: 'adonis-logger',
       level: 'info',
       messageKey: 'msg',
-      desination: getFakeStream((message) => {
+      destination: getFakeStream((message) => {
         messages.push(message.trim())
         return true
       }),
@@ -366,7 +366,7 @@ test.group('Logger', () => {
           return { foo: levelNumber }
         },
       },
-      desination: getFakeStream((message) => {
+      destination: getFakeStream((message) => {
         messages.push(message.trim())
         return true
       }),
@@ -426,7 +426,7 @@ test.group('Logger', () => {
           return Object.assign({ ticked: true }, log)
         },
       },
-      desination: getFakeStream((message) => {
+      destination: getFakeStream((message) => {
         messages.push(message.trim())
         return true
       }),
@@ -492,7 +492,7 @@ test.group('Logger', () => {
           return Object.assign({ ticked: true }, log)
         },
       },
-      desination: getFakeStream((message) => {
+      destination: getFakeStream((message) => {
         messages.push(message.trim())
         return true
       }),
@@ -542,7 +542,7 @@ test.group('Logger', () => {
       name: 'adonis-logger',
       level: 'trace',
       messageKey: 'msg',
-      desination: getFakeStream((message) => {
+      destination: getFakeStream((message) => {
         messages.push(message.trim())
         return true
       }),
@@ -584,7 +584,7 @@ test.group('Logger', () => {
       customLevels: {
         foo: 35,
       },
-      desination: getFakeStream((message) => {
+      destination: getFakeStream((message) => {
         messages.push(message.trim())
         return true
       }),
@@ -614,7 +614,7 @@ test.group('Logger', () => {
       name: 'adonis-logger',
       level: 'trace',
       messageKey: 'msg',
-      desination: getFakeStream((message) => {
+      destination: getFakeStream((message) => {
         messages.push(message.trim())
         return true
       }),

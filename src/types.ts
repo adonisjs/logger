@@ -24,7 +24,7 @@ export type { TransportTargetOptions, Level, LevelMapping, ChildLoggerOptions, B
  */
 export type LoggerConfig = Omit<LoggerOptions<any>, 'browser' | 'timestamp'> & {
   enabled?: boolean
-  desination?: DestinationStream
+  destination?: DestinationStream
   timestamp?: TimestampKeywords | boolean | (() => string)
 }
 
