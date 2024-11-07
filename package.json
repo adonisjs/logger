@@ -31,7 +31,7 @@
 		"prepublishOnly": "npm run build",
 		"lint": "eslint . --ext=.ts",
 		"sync-labels": "github-label-sync --labels .github/labels.json adonisjs/logger",
-		"quick:test": "node --loader=ts-node/esm --enable-source-maps bin/test.ts"
+		"quick:test": "node --import=ts-node-maintained/register/esm --enable-source-maps bin/test.ts"
 	},
 	"keywords": [
 		"logger",
@@ -61,7 +61,7 @@
 		"husky": "^9.0.11",
 		"prettier": "^3.2.4",
 		"release-it": "^17.2.0",
-		"ts-node": "^10.9.2",
+		"ts-node-maintained": "^10.9.4",
 		"tsup": "^8.0.1",
 		"typescript": "^5.4.5"
 	},
