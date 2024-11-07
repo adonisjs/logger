@@ -51,6 +51,7 @@
 		"@japa/expect-type": "^2.0.2",
 		"@japa/runner": "^3.1.4",
 		"@japa/snapshot": "^2.0.5",
+		"@release-it/conventional-changelog": "^9.0.2",
 		"@swc/core": "^1.4.16",
 		"@types/node": "^20.12.7",
 		"c8": "^9.1.0",
@@ -60,7 +61,7 @@
 		"github-label-sync": "^2.3.1",
 		"husky": "^9.0.11",
 		"prettier": "^3.2.4",
-		"release-it": "^17.2.0",
+		"release-it": "^17.10.0",
 		"ts-node-maintained": "^10.9.4",
 		"tsup": "^8.0.1",
 		"typescript": "^5.4.5"
@@ -115,19 +116,26 @@
 	},
 	"release-it": {
 		"git": {
+			"requireCleanWorkingDir": true,
+			"requireUpstream": true,
 			"commitMessage": "chore(release): ${version}",
 			"tagAnnotation": "v${version}",
+			"push": true,
 			"tagName": "v${version}"
 		},
-		"hooks": {
-			"before:init": [
-				"npm test"
-			]
-		},
 		"github": {
-			"release": true,
-			"releaseName": "v${version}",
-			"web": true
+			"release": true
+		},
+		"npm": {
+			"publish": true,
+			"skipChecks": true
+		},
+		"plugins": {
+			"@release-it/conventional-changelog": {
+				"preset": {
+					"name": "angular"
+				}
+			}
 		}
 	}
 }
