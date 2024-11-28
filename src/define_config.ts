@@ -40,7 +40,11 @@ export function defineConfig<KnownLoggers extends Record<string, LoggerConfig>>(
     if (logger.transport && 'targets' in logger.transport) {
       logger.transport.targets.forEach((target) => {
         if (!target.level) {
-          debug('inherting "%s" target level from "%s" logger', target.target, loggerName)
+          if ('target' in target) {
+            debug('inherting "%s" target level from "%s" logger', target.target, loggerName)
+          } else {
+            debug('inherting %O target level from "%s" logger', target, loggerName)
+          }
           target.level = logger.level
         }
       })

@@ -35,11 +35,11 @@ import type { LoggerConfig, LevelMapping, Bindings, ChildLoggerOptions } from '.
  * ```
  */
 export class Logger<Config extends LoggerConfig = LoggerConfig> {
-  pino: PinoLogger<keyof Config['customLevels'] & string>
+  pino: PinoLogger<string>
 
   constructor(
     protected config: Config,
-    pino?: PinoLogger<keyof Config['customLevels'] & string>
+    pino?: PinoLogger<string>
   ) {
     if (!this.config.enabled) {
       this.pino = abstractLogging
@@ -173,7 +173,7 @@ export class Logger<Config extends LoggerConfig = LoggerConfig> {
       return
     }
 
-    ;(this.pino[level] as any)(mergingObject, message, ...values)
+    this.pino[level as string](mergingObject, message, ...values)
   }
 
   /**
