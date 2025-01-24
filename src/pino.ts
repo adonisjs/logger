@@ -41,6 +41,8 @@ export function createPino<Config extends LoggerConfig>(options: Config): PinoLo
    */
   if (typeof timestamp === 'string' && TimestampFormatters[timestamp]) {
     pinoOptions.timestamp = TimestampFormatters[timestamp]
+  } else if (typeof timestamp === 'boolean' || typeof timestamp === 'function') {
+    pinoOptions.timestamp = timestamp
   }
 
   return desination ? pino(pinoOptions, desination) : pino(pinoOptions)

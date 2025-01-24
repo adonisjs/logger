@@ -552,6 +552,44 @@ test.group('Logger', () => {
     assert.isNumber(JSON.parse(messages[0]).time)
   })
 
+  test('format timestamp using custom function', ({ assert }) => {
+    const messages: string[] = []
+
+    const logger = new Logger({
+      enabled: true,
+      timestamp: () => `,"eventTime":${Date.now()}`,
+      name: 'adonis-logger',
+      level: 'trace',
+      messageKey: 'msg',
+      desination: getFakeStream((message) => {
+        messages.push(message.trim())
+        return true
+      }),
+    })
+
+    logger.info('hello trace')
+    assert.isNumber(JSON.parse(messages[0]).eventTime)
+  })
+
+  test('disable timestamp logging', ({ assert }) => {
+    const messages: string[] = []
+
+    const logger = new Logger({
+      enabled: true,
+      timestamp: false,
+      name: 'adonis-logger',
+      level: 'trace',
+      messageKey: 'msg',
+      desination: getFakeStream((message) => {
+        messages.push(message.trim())
+        return true
+      }),
+    })
+
+    logger.info('hello trace')
+    assert.isUndefined(JSON.parse(messages[0]).time)
+  })
+
   test('log conditionally', async ({ assert }) => {
     let stack: string[] = []
 
