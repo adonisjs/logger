@@ -554,10 +554,11 @@ test.group('Logger', () => {
 
   test('format timestamp using custom function', ({ assert }) => {
     const messages: string[] = []
+    const now = Date.now()
 
     const logger = new Logger({
       enabled: true,
-      timestamp: () => `,"eventTime":${Date.now()}`,
+      timestamp: () => `,"eventTime":${now}`,
       name: 'adonis-logger',
       level: 'trace',
       messageKey: 'msg',
@@ -569,6 +570,7 @@ test.group('Logger', () => {
 
     logger.info('hello trace')
     assert.isNumber(JSON.parse(messages[0]).eventTime)
+    assert.equal(JSON.parse(messages[0]).eventTime, now)
   })
 
   test('disable timestamp logging', ({ assert }) => {
