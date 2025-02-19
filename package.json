@@ -1,6 +1,6 @@
 {
 	"name": "@adonisjs/logger",
-	"version": "6.0.5",
+	"version": "6.0.6",
 	"description": "Logger built on top of pino to be used by AdonisJs",
 	"main": "build/index.js",
 	"type": "module",
@@ -20,16 +20,16 @@
 	"scripts": {
 		"pretest": "npm run lint",
 		"test": "cross-env NODE_DEBUG=adonisjs:logger c8 npm run quick:test",
-    "lint": "eslint .",
-    "format": "prettier --write .",
-    "typecheck": "tsc --noEmit",
+		"lint": "eslint .",
+		"format": "prettier --write .",
+		"typecheck": "tsc --noEmit",
 		"clean": "del-cli build",
 		"precompile": "npm run lint && npm run clean ",
 		"compile": "tsup-node && tsc --emitDeclarationOnly --declaration",
 		"build": "npm run compile",
 		"version": "npm run build",
 		"prepublishOnly": "npm run build",
-    "release": "release-it",
+		"release": "release-it",
 		"quick:test": "node --import=ts-node-maintained/register/esm --enable-source-maps bin/test.ts"
 	},
 	"devDependencies": {
@@ -74,10 +74,10 @@
 	],
 	"author": "Harminder Virk <virk@adonisjs.com>",
 	"license": "MIT",
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
-  },
+	"publishConfig": {
+		"access": "public",
+		"provenance": true
+	},
 	"tsup": {
 		"entry": [
 			"./index.ts",
@@ -92,37 +92,37 @@
 		"target": "esnext"
 	},
 	"release-it": {
-    "git": {
-      "requireCleanWorkingDir": true,
-      "requireUpstream": true,
-      "commitMessage": "chore(release): ${version}",
-      "tagAnnotation": "v${version}",
-      "push": true,
-      "tagName": "v${version}"
-    },
-    "github": {
-      "release": true
-    },
-    "npm": {
-      "publish": true,
-      "skipChecks": true
-    },
-    "plugins": {
-      "@release-it/conventional-changelog": {
-        "preset": {
-          "name": "angular"
-        }
-      }
-    }
-  },
-  "c8": {
-    "reporter": [
-      "text",
-      "html"
-    ],
-    "exclude": [
-      "tests/**"
-    ]
-  },
+		"git": {
+			"requireCleanWorkingDir": true,
+			"requireUpstream": true,
+			"commitMessage": "chore(release): ${version}",
+			"tagAnnotation": "v${version}",
+			"push": true,
+			"tagName": "v${version}"
+		},
+		"github": {
+			"release": true
+		},
+		"npm": {
+			"publish": true,
+			"skipChecks": true
+		},
+		"plugins": {
+			"@release-it/conventional-changelog": {
+				"preset": {
+					"name": "angular"
+				}
+			}
+		}
+	},
+	"c8": {
+		"reporter": [
+			"text",
+			"html"
+		],
+		"exclude": [
+			"tests/**"
+		]
+	},
 	"prettier": "@adonisjs/prettier-config"
 }
