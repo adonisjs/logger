@@ -15,8 +15,8 @@
 		"./factories": "./build/factories/main.js"
 	},
 	"engines": {
-		"node": ">=18.16.0"
-	},
+    "node": ">=24.0.0"
+  },
 	"scripts": {
 		"pretest": "npm run lint",
 		"test": "cross-env NODE_DEBUG=adonisjs:logger c8 npm run quick:test",
