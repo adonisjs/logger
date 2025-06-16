@@ -7,10 +7,10 @@
  * file that was distributed with this source code.
  */
 
-import { RuntimeException } from '@poppinss/utils'
+import { RuntimeException } from '@poppinss/utils/exception'
 
-import type { LoggerConfig, LoggerManagerConfig } from './types.js'
 import debug from './debug.js'
+import type { LoggerConfig, LoggerManagerConfig } from './types.js'
 
 /**
  * Define the logger config. The config object must have a default property

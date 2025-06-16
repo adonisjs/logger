@@ -13,7 +13,7 @@ import {
   transport,
   multistream,
   destination,
-  LoggerOptions,
+  type LoggerOptions,
   stdSerializers,
   stdTimeFunctions,
   type Logger as PinoLogger,

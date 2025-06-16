@@ -8,13 +8,13 @@
  */
 
 import {
-  Level,
-  Bindings,
-  LevelMapping,
-  LoggerOptions,
-  DestinationStream,
-  ChildLoggerOptions,
-  TransportTargetOptions,
+  type Level,
+  type Bindings,
+  type LevelMapping,
+  type LoggerOptions,
+  type DestinationStream,
+  type ChildLoggerOptions,
+  type TransportTargetOptions,
 } from 'pino'
 export type TimestampKeywords = 'iso' | 'unix' | 'epoch'
 export type { TransportTargetOptions, Level, LevelMapping, ChildLoggerOptions, Bindings }

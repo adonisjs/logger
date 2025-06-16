@@ -8,7 +8,7 @@
  */
 
 import { test } from '@japa/runner'
-import { TransportTargetOptions } from 'pino'
+import { type TransportTargetOptions } from 'pino'
 import { targets } from '../src/targets/main.js'
 
 test.group('Targets', () => {

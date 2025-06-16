@@ -10,7 +10,7 @@
 import { test } from '@japa/runner'
 
 import { Logger } from '../index.js'
-import { LoggerConfig } from '../src/types.js'
+import { type LoggerConfig } from '../src/types.js'
 import { getFakeStream } from '../factories/logger.js'
 import { defineConfig } from '../src/define_config.js'
 import { LoggerManager } from '../src/logger_manager.js'
