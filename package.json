@@ -1,6 +1,6 @@
 {
 	"name": "@adonisjs/logger",
-	"version": "7.0.0-next.0",
+	"version": "7.0.0-next.1",
 	"description": "Logger built on top of pino to be used by AdonisJs",
 	"main": "build/index.js",
 	"type": "module",
@@ -15,8 +15,8 @@
 		"./factories": "./build/factories/main.js"
 	},
 	"engines": {
-    "node": ">=24.0.0"
-  },
+		"node": ">=24.0.0"
+	},
 	"scripts": {
 		"pretest": "npm run lint",
 		"test": "cross-env NODE_DEBUG=adonisjs:logger c8 npm run quick:test",
