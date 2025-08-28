@@ -33,8 +33,10 @@ const TimestampFormatters: { [Keyword in TimestampKeywords]: () => string } = {
  * Returns an instance of pino logger by adjusting the config options
  */
 export function createPino<Config extends LoggerConfig>(options: Config): PinoLogger<string> {
-  const { desination, timestamp, ...rest } = options
-  const pinoOptions: LoggerOptions<any> = Object.assign({}, rest)
+  const { desination, transport: configTransport, timestamp, ...rest } = options
+  const pinoOptions: LoggerOptions<any> = desination
+    ? Object.assign({}, rest)
+    : Object.assign({ transport: configTransport }, rest)
 
   /**
    * Use pino formatters when a keyword is used
