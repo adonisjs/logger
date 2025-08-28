@@ -173,7 +173,7 @@ export class Logger<Config extends LoggerConfig = LoggerConfig> {
       return
     }
 
-    this.pino[level as string](mergingObject, message, ...values)
+    this.pino[level as string](mergingObject, message, ...(values as []))
   }
 
   /**
