@@ -1,6 +1,6 @@
 {
 	"name": "@adonisjs/logger",
-	"version": "7.0.0-next.1",
+	"version": "7.1.0-next.0",
 	"description": "Logger built on top of pino to be used by AdonisJs",
 	"main": "build/index.js",
 	"type": "module",
@@ -58,14 +58,14 @@
 		"abstract-logging": "^2.0.1",
 		"pino": "^9.9.0"
 	},
-  "peerDependencies": {
-    "pino-pretty": "^13.1.1"
-  },
-  "peerDependenciesMeta": {
-    "pino-pretty": {
-      "optional": true
-    }
-  },
+	"peerDependencies": {
+		"pino-pretty": "^13.1.1"
+	},
+	"peerDependenciesMeta": {
+		"pino-pretty": {
+			"optional": true
+		}
+	},
 	"homepage": "https://github.com/adonisjs/logger#readme",
 	"repository": {
 		"type": "git",
