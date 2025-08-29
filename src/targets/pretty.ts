@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import type { TransportTargetOptions, Level, PrettyTargetOptions } from '../types.js'
+import type { TransportTargetOptions, Level, PrettyTargetOptions } from '../types.ts'
 
 /**
  * Construct options object for the pino-pretty target.

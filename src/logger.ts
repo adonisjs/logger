@@ -11,8 +11,8 @@
 import abstractLogging from 'abstract-logging'
 import type { LevelWithSilent, Logger as PinoLogger } from 'pino'
 
-import { createPino, levels, version } from './pino.js'
-import type { LoggerConfig, LevelMapping, Bindings, ChildLoggerOptions } from './types.js'
+import { createPino, levels, version } from './pino.ts'
+import type { LoggerConfig, LevelMapping, Bindings, ChildLoggerOptions } from './types.ts'
 
 /**
  * A thin wrapper on top of Pino with support for disabling the logger.

@@ -8,8 +8,8 @@
  */
 
 import { Writable } from 'node:stream'
-import { Logger } from '../src/logger.js'
-import type { LoggerConfig } from '../src/types.js'
+import { Logger } from '../src/logger.ts'
+import type { LoggerConfig } from '../src/types.ts'
 
 export function getFakeStream(fn: (line: string) => boolean) {
   const stream = new Writable()

@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import type { FileTargetOptions, TransportTargetOptions, Level } from '../types.js'
+import type { FileTargetOptions, TransportTargetOptions, Level } from '../types.ts'
 
 /**
  * Construct options object for the file target.

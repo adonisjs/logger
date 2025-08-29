@@ -9,11 +9,11 @@
 
 import { test } from '@japa/runner'
 
-import { Logger } from '../index.js'
-import { type LoggerConfig } from '../src/types.js'
-import { getFakeStream } from '../factories/logger.js'
-import { defineConfig } from '../src/define_config.js'
-import { LoggerManager } from '../src/logger_manager.js'
+import { Logger } from '../index.ts'
+import { type LoggerConfig } from '../src/types.ts'
+import { getFakeStream } from '../factories/logger.ts'
+import { defineConfig } from '../src/define_config.ts'
+import { LoggerManager } from '../src/logger_manager.ts'
 
 test.group('Logger manager', () => {
   test('create logger instances only once', ({ assert, expectTypeOf }) => {

@@ -7,15 +7,15 @@
  * file that was distributed with this source code.
  */
 
-export { Logger } from './src/logger.js'
-export { targets } from './src/targets/main.js'
-export { defineConfig } from './src/define_config.js'
+export { Logger } from './src/logger.ts'
+export { targets } from './src/targets/main.ts'
+export { defineConfig } from './src/define_config.ts'
 export { destinations } from './src/destinations.cts'
-export { LoggerManager } from './src/logger_manager.js'
+export { LoggerManager } from './src/logger_manager.ts'
 export {
   transport,
   destination,
   multistream,
   stdSerializers,
   stdTimeFunctions,
-} from './src/pino.js'
+} from './src/pino.ts'

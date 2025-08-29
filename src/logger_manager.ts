@@ -9,9 +9,9 @@
 
 import type { Logger as PinoLogger } from 'pino'
 
-import debug from './debug.js'
-import { Logger } from './logger.js'
-import { type LoggerConfig, type LoggerManagerConfig } from './types.js'
+import debug from './debug.ts'
+import { Logger } from './logger.ts'
+import { type LoggerConfig, type LoggerManagerConfig } from './types.ts'
 
 /**
  * Logger manager is used to manage multiple instances of the Logger. The

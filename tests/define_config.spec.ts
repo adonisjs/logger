@@ -8,9 +8,9 @@
  */
 
 import { test } from '@japa/runner'
-import { defineConfig } from '../src/define_config.js'
-import type { LoggerManagerConfig } from '../src/types.js'
-import { targets } from '../index.js'
+import { defineConfig } from '../src/define_config.ts'
+import type { LoggerManagerConfig } from '../src/types.ts'
+import { targets } from '../index.ts'
 
 test.group('Define config', () => {
   test('define logger config', ({ assert, expectTypeOf }) => {

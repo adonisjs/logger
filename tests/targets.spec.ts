@@ -9,7 +9,7 @@
 
 import { test } from '@japa/runner'
 import { type TransportTargetOptions } from 'pino'
-import { targets } from '../src/targets/main.js'
+import { targets } from '../src/targets/main.ts'
 
 test.group('Targets', () => {
   test('create transport for pino/file', ({ assert }) => {

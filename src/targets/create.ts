@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import type { TransportTargetOptions } from '../types.js'
+import type { TransportTargetOptions } from '../types.ts'
 
 /**
  * Exposes the API to construct targets array conditionally.

@@ -7,4 +7,4 @@
  * file that was distributed with this source code.
  */
 
-export { LoggerFactory } from './logger.js'
+export { LoggerFactory } from './logger.ts'

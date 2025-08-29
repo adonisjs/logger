@@ -8,9 +8,9 @@
  */
 
 import { test } from '@japa/runner'
-import { levels } from '../src/pino.js'
-import { Logger } from '../src/logger.js'
-import { getFakeStream } from '../factories/logger.js'
+import { levels } from '../src/pino.ts'
+import { Logger } from '../src/logger.ts'
+import { getFakeStream } from '../factories/logger.ts'
 import { destinations } from '../index.ts'
 
 test.group('Logger', () => {

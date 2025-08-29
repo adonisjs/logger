@@ -7,9 +7,9 @@
  * file that was distributed with this source code.
  */
 
-import { file } from './file.js'
-import { Targets } from './create.js'
-import { pretty } from './pretty.js'
+import { file } from './file.ts'
+import { Targets } from './create.ts'
+import { pretty } from './pretty.ts'
 
 /**
  * Create the targets array conditionally.

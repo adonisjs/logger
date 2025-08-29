@@ -8,8 +8,8 @@
  */
 
 import { test } from '@japa/runner'
-import { Logger } from '../index.js'
-import { LoggerFactory } from '../factories/logger.js'
+import { Logger } from '../index.ts'
+import { LoggerFactory } from '../factories/logger.ts'
 
 test.group('Logger factory', () => {
   test('create logger instance using the factory', ({ assert }) => {

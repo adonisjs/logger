@@ -9,8 +9,8 @@
 
 import { RuntimeException } from '@poppinss/utils/exception'
 
-import debug from './debug.js'
-import type { LoggerConfig, LoggerManagerConfig } from './types.js'
+import debug from './debug.ts'
+import type { LoggerConfig, LoggerManagerConfig } from './types.ts'
 
 /**
  * Define the logger config. The config object must have a default property

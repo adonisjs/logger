@@ -18,7 +18,7 @@ import {
   stdTimeFunctions,
   type Logger as PinoLogger,
 } from 'pino'
-import type { LoggerConfig, TimestampKeywords, LevelMapping } from './types.js'
+import type { LoggerConfig, TimestampKeywords, LevelMapping } from './types.ts'
 
 /**
  * Mapping pino timestamp formatters to keywords
