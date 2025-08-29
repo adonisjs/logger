@@ -47,6 +47,7 @@
 		"cross-env": "^10.0.0",
 		"del-cli": "^6.0.0",
 		"eslint": "^9.34.0",
+		"pino-pretty": "^13.1.1",
 		"prettier": "^3.6.2",
 		"release-it": "^19.0.4",
 		"tsup": "^8.5.0",
@@ -57,6 +58,14 @@
 		"abstract-logging": "^2.0.1",
 		"pino": "^9.9.0"
 	},
+  "peerDependencies": {
+    "pino-pretty": "^13.1.1"
+  },
+  "peerDependenciesMeta": {
+    "pino-pretty": {
+      "optional": true
+    }
+  },
 	"homepage": "https://github.com/adonisjs/logger#readme",
 	"repository": {
 		"type": "git",

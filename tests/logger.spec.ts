@@ -11,6 +11,7 @@ import { test } from '@japa/runner'
 import { levels } from '../src/pino.js'
 import { Logger } from '../src/logger.js'
 import { getFakeStream } from '../factories/logger.js'
+import { destinations } from '../index.ts'
 
 test.group('Logger', () => {
   test('log message at all log levels', ({ assert }) => {
@@ -714,5 +715,48 @@ test.group('Logger', () => {
     })
 
     assert.deepEqual(logger.levels, levels)
+  })
+
+  test('use pino pretty destination via cjs require', ({ assert }) => {
+    const messages: string[] = []
+
+    const logger = new Logger({
+      enabled: true,
+      name: 'adonis-logger',
+      level: 'trace',
+      messageKey: 'msg',
+      desination: destinations.pretty({
+        sync: true,
+        destination: getFakeStream((message) => {
+          messages.push(message.trim())
+          return true
+        }),
+      }),
+    })
+
+    logger.trace('hello trace')
+    logger.debug('hello debug')
+    logger.info('hello info')
+    logger.warn('hello warn')
+    logger.error('hello error')
+    logger.fatal('hello fatal')
+
+    assert.include(messages[0], 'hello trace')
+    assert.include(messages[0], 'TRACE')
+
+    assert.include(messages[1], 'hello debug')
+    assert.include(messages[1], 'DEBUG')
+
+    assert.include(messages[2], 'hello info')
+    assert.include(messages[2], 'INFO')
+
+    assert.include(messages[3], 'hello warn')
+    assert.include(messages[3], 'WARN')
+
+    assert.include(messages[4], 'hello error')
+    assert.include(messages[4], 'ERROR')
+
+    assert.include(messages[5], 'hello fatal')
+    assert.include(messages[5], 'FATAL')
   })
 })
