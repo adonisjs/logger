@@ -15,7 +15,7 @@ test.group('Logger factory', () => {
   test('create logger instance using the factory', ({ assert }) => {
     const logger = new LoggerFactory().create()
     assert.instanceOf(logger, Logger)
-    assert.isUndefined(logger.isEnabled)
+    assert.isFalse(logger.isEnabled)
   })
 
   test('create logger using custom config', ({ assert }) => {

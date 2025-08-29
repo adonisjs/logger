@@ -31,6 +31,10 @@ export class LoggerManager<
    */
   #loggers: Map<keyof KnownLoggers, Logger<KnownLoggers[keyof KnownLoggers]>> = new Map()
 
+  /**
+   * Creates a new LoggerManager instance
+   * @param config - The logger manager configuration
+   */
   constructor(config: LoggerManagerConfig<KnownLoggers>) {
     super(config.loggers[config.default])
     this.#config = config
@@ -39,8 +43,14 @@ export class LoggerManager<
 
   /**
    * Creates an instance of the logger
+   * @param logger - The logger key
+   * @param config - The logger configuration
+   * @returns A new logger instance
    */
-  protected createLogger<K extends keyof KnownLoggers>(logger: K, config: KnownLoggers[K]) {
+  protected createLogger<K extends keyof KnownLoggers>(
+    logger: K,
+    config: KnownLoggers[K]
+  ): Logger<KnownLoggers[K]> {
     if (!config.name && typeof logger === 'string') {
       config.name = logger
     }
@@ -50,8 +60,14 @@ export class LoggerManager<
 
   /**
    * Get instance of a logger
+   * @param logger - The logger key to retrieve
+   * @returns The logger instance
    */
   use<K extends keyof KnownLoggers>(logger: K): Logger<KnownLoggers[K]>
+  /**
+   * Get instance of the default logger
+   * @returns The default logger instance
+   */
   use(): Logger<LoggerConfig>
   use<K extends keyof KnownLoggers>(logger?: K): Logger<KnownLoggers[K]> | Logger<LoggerConfig> {
     let loggerToUse = logger || this.#config.default
@@ -73,11 +89,14 @@ export class LoggerManager<
   /**
    * Create a logger instance from the config. The created instance
    * is not managed by the manager
+   * @param config - The logger configuration
+   * @param pino - Optional Pino logger instance
+   * @returns A new logger instance
    */
   create<Config extends LoggerConfig>(
     config: Config,
     pino?: PinoLogger<keyof Config['customLevels'] & string>
-  ) {
+  ): Logger<Config> {
     return new Logger(config, pino)
   }
 }
