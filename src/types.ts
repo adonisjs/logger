@@ -66,6 +66,9 @@ export type PrettyTargetOptions = {
   append?: boolean
   mkdir?: boolean
   customPrettifiers?: Record<string, (inputData: string | object) => string>
+  customLevels?: string | object
+  customColors?: string | object
+  useOnlyCustomProps?: boolean
 }
 
 /**
