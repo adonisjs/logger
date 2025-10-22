@@ -27,6 +27,7 @@
 		"precompile": "npm run lint && npm run clean ",
 		"compile": "tsup-node && tsc --emitDeclarationOnly --declaration",
 		"build": "npm run compile",
+		"docs": "typedoc",
 		"version": "npm run build",
 		"prepublishOnly": "npm run build",
 		"release": "release-it",
