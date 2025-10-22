@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { type PrettyTargetOptions } from './types.ts'
+import { type PrettyTargetOptions } from './types.js'
 
 /**
  * Collection of destination helpers for logger transport targets

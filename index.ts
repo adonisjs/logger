@@ -10,7 +10,6 @@
 export { Logger } from './src/logger.ts'
 export { targets } from './src/targets/main.ts'
 export { defineConfig } from './src/define_config.ts'
-export { destinations } from './src/destinations.cts'
 export { LoggerManager } from './src/logger_manager.ts'
 export {
   transport,

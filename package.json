@@ -12,6 +12,7 @@
 	"exports": {
 		".": "./build/index.js",
 		"./types": "./build/src/types.js",
+    "./destinations": "./build/src/destinations.cjs",
 		"./factories": "./build/factories/main.js"
 	},
 	"engines": {
@@ -25,7 +26,7 @@
 		"typecheck": "tsc --noEmit",
 		"clean": "del-cli build",
 		"precompile": "npm run lint && npm run clean ",
-		"compile": "tsup-node && tsc --emitDeclarationOnly --declaration",
+		"compile": "tsup-node && tsc --emitDeclarationOnly --declaration && tsc src/destinations.cts --outDir build/src",
 		"build": "npm run compile",
 		"docs": "typedoc",
 		"version": "npm run build",

@@ -11,7 +11,7 @@ import { test } from '@japa/runner'
 import { levels } from '../src/pino.ts'
 import { Logger } from '../src/logger.ts'
 import { getFakeStream } from '../factories/logger.ts'
-import { destinations } from '../index.ts'
+import { destinations } from '../src/destinations.cts'
 
 test.group('Logger', () => {
   test('log message at all log levels', ({ assert }) => {
