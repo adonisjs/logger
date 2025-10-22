@@ -1,6 +1,6 @@
 {
 	"name": "@adonisjs/logger",
-	"version": "7.1.0-next.0",
+	"version": "7.1.0-next.1",
 	"description": "Logger built on top of pino to be used by AdonisJs",
 	"main": "build/index.js",
 	"type": "module",
@@ -12,7 +12,7 @@
 	"exports": {
 		".": "./build/index.js",
 		"./types": "./build/src/types.js",
-    "./destinations": "./build/src/destinations.cjs",
+		"./destinations": "./build/src/destinations.cjs",
 		"./factories": "./build/factories/main.js"
 	},
 	"engines": {
