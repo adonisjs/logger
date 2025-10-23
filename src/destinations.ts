@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { type PrettyTargetOptions } from './types.js'
+import { type PrettyTargetOptions } from './types.ts'
 
 /**
  * Collection of destination helpers for logger transport targets
@@ -18,7 +18,8 @@ export const destinations = {
    * @param options - Optional pretty target options for formatting
    * @returns A pino-pretty destination instance
    */
-  pretty(options?: PrettyTargetOptions) {
-    return require('pino-pretty')(options)
+  async pretty(options?: PrettyTargetOptions) {
+    const { default: pinoPretty } = await import('pino-pretty')
+    return pinoPretty(options)
   },
 }
