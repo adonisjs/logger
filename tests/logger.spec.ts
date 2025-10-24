@@ -717,7 +717,7 @@ test.group('Logger', () => {
     assert.deepEqual(logger.levels, levels)
   })
 
-  test('use pino pretty destination via cjs require', ({ assert }) => {
+  test('use pino pretty as a destination', async ({ assert }) => {
     const messages: string[] = []
 
     const logger = new Logger({
@@ -725,7 +725,7 @@ test.group('Logger', () => {
       name: 'adonis-logger',
       level: 'trace',
       messageKey: 'msg',
-      desination: destinations.pretty({
+      desination: await destinations.pretty({
         sync: true,
         destination: getFakeStream((message) => {
           messages.push(message.trim())
