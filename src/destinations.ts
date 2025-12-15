@@ -7,6 +7,7 @@
  * file that was distributed with this source code.
  */
 
+import { type DestinationStream } from 'pino'
 import { type PrettyTargetOptions } from './types.ts'
 
 /**
@@ -18,7 +19,7 @@ export const destinations = {
    * @param options - Optional pretty target options for formatting
    * @returns A pino-pretty destination instance
    */
-  async pretty(options?: PrettyTargetOptions) {
+  async pretty(options?: PrettyTargetOptions): Promise<DestinationStream> {
     const { default: pinoPretty } = await import('pino-pretty')
     return pinoPretty(options)
   },
