@@ -12,7 +12,10 @@ import type { FileTargetOptions, TransportTargetOptions, Level } from '../types.
 /**
  * Construct options object for the file target.
  */
-export function file(options?: FileTargetOptions, level?: (string & {}) | Level): TransportTargetOptions {
+export function file(
+  options?: FileTargetOptions,
+  level?: (string & {}) | Level
+): TransportTargetOptions {
   return {
     target: 'pino/file',
     level: level,
