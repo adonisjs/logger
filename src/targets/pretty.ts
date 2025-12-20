@@ -14,7 +14,7 @@ import type { TransportTargetOptions, Level, PrettyTargetOptions } from '../type
  */
 export function pretty(
   options?: PrettyTargetOptions,
-  level?: string | Level
+  level?: (string & {}) | Level
 ): TransportTargetOptions {
   return {
     target: 'pino-pretty',
