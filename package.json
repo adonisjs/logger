@@ -1,6 +1,6 @@
 {
 	"name": "@adonisjs/logger",
-	"version": "7.1.0-next.3",
+	"version": "7.1.0",
 	"description": "Logger built on top of pino to be used by AdonisJs",
 	"main": "build/index.js",
 	"type": "module",
