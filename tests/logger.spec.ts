@@ -22,7 +22,7 @@ test.group('Logger', () => {
       name: 'adonis-logger',
       level: 'trace',
       messageKey: 'msg',
-      desination: getFakeStream((message) => {
+      destination: getFakeStream((message) => {
         messages.push(message.trim())
         return true
       }),
@@ -78,7 +78,7 @@ test.group('Logger', () => {
       name: 'adonis-logger',
       level: 'trace',
       messageKey: 'msg',
-      desination: getFakeStream((message) => {
+      destination: getFakeStream((message) => {
         messages.push(message.trim())
         return true
       }),
@@ -153,7 +153,7 @@ test.group('Logger', () => {
       name: 'adonis-logger',
       level: 'info',
       messageKey: 'msg',
-      desination: getFakeStream((message) => {
+      destination: getFakeStream((message) => {
         messages.push(message.trim())
         return true
       }),
@@ -200,7 +200,7 @@ test.group('Logger', () => {
       name: 'adonis-logger',
       level: 'trace',
       messageKey: 'msg',
-      desination: getFakeStream((message) => {
+      destination: getFakeStream((message) => {
         messages.push(message.trim())
         return true
       }),
@@ -257,7 +257,7 @@ test.group('Logger', () => {
       name: 'adonis-logger',
       level: 'info',
       messageKey: 'msg',
-      desination: getFakeStream((message) => {
+      destination: getFakeStream((message) => {
         messages.push(message.trim())
         return true
       }),
@@ -367,7 +367,7 @@ test.group('Logger', () => {
           return { foo: levelNumber }
         },
       },
-      desination: getFakeStream((message) => {
+      destination: getFakeStream((message) => {
         messages.push(message.trim())
         return true
       }),
@@ -427,7 +427,7 @@ test.group('Logger', () => {
           return Object.assign({ ticked: true }, log)
         },
       },
-      desination: getFakeStream((message) => {
+      destination: getFakeStream((message) => {
         messages.push(message.trim())
         return true
       }),
@@ -493,7 +493,7 @@ test.group('Logger', () => {
           return Object.assign({ ticked: true }, log)
         },
       },
-      desination: getFakeStream((message) => {
+      destination: getFakeStream((message) => {
         messages.push(message.trim())
         return true
       }),
@@ -543,7 +543,7 @@ test.group('Logger', () => {
       name: 'adonis-logger',
       level: 'trace',
       messageKey: 'msg',
-      desination: getFakeStream((message) => {
+      destination: getFakeStream((message) => {
         messages.push(message.trim())
         return true
       }),
@@ -563,7 +563,7 @@ test.group('Logger', () => {
       name: 'adonis-logger',
       level: 'trace',
       messageKey: 'msg',
-      desination: getFakeStream((message) => {
+      destination: getFakeStream((message) => {
         messages.push(message.trim())
         return true
       }),
@@ -583,7 +583,7 @@ test.group('Logger', () => {
       name: 'adonis-logger',
       level: 'trace',
       messageKey: 'msg',
-      desination: getFakeStream((message) => {
+      destination: getFakeStream((message) => {
         messages.push(message.trim())
         return true
       }),
@@ -625,7 +625,7 @@ test.group('Logger', () => {
       customLevels: {
         foo: 35,
       },
-      desination: getFakeStream((message) => {
+      destination: getFakeStream((message) => {
         messages.push(message.trim())
         return true
       }),
@@ -655,7 +655,7 @@ test.group('Logger', () => {
       name: 'adonis-logger',
       level: 'trace',
       messageKey: 'msg',
-      desination: getFakeStream((message) => {
+      destination: getFakeStream((message) => {
         messages.push(message.trim())
         return true
       }),
@@ -725,7 +725,7 @@ test.group('Logger', () => {
       name: 'adonis-logger',
       level: 'trace',
       messageKey: 'msg',
-      desination: await destinations.pretty({
+      destination: await destinations.pretty({
         sync: true,
         destination: getFakeStream((message) => {
           messages.push(message.trim())
@@ -758,5 +758,24 @@ test.group('Logger', () => {
 
     assert.include(messages[5], 'hello fatal')
     assert.include(messages[5], 'FATAL')
+  })
+
+  test('support deprecated "desination" option for backward compatibility', ({ assert }) => {
+    const messages: string[] = []
+
+    const logger = new Logger({
+      enabled: true,
+      level: 'info',
+      messageKey: 'msg',
+      desination: getFakeStream((message) => {
+        messages.push(message.trim())
+        return true
+      }),
+    })
+
+    logger.info('hello info')
+
+    assert.lengthOf(messages, 1)
+    assert.include(messages[0], 'hello info')
   })
 })

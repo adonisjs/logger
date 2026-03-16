@@ -21,8 +21,8 @@ import type { LoggerConfig, LevelMapping, Bindings, ChildLoggerOptions } from '.
  *
  * - enabled: A flag to turn off the logger. You can still use the logger API, but
  *            nothing will be logged.
- * - destination: A stream to pass to pino as the desintation stream. With pino, you
- *                pass is at the 2nd argument, with Logger, you pass it as an option.
+ * - destination: A stream to pass to pino as the destination stream. With pino, you
+ *                pass it as the 2nd argument, with Logger, you pass it as an option.
  *
  * ```ts
  * const logger = new Logger({ enabled: true })
@@ -30,7 +30,7 @@ import type { LoggerConfig, LevelMapping, Bindings, ChildLoggerOptions } from '.
  * ```
  *
  * ```ts
- * const logger = new Logger({ enabled: true, desintation: pino.destination(2) })
+ * const logger = new Logger({ enabled: true, destination: pino.destination(2) })
  * logger.error('something went wrong')
  * ```
  */

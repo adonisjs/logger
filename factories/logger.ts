@@ -47,7 +47,7 @@ export class LoggerFactory {
    */
   create() {
     if (this.#logsCollection) {
-      this.#options.desination = getFakeStream((message) => {
+      this.#options.destination = getFakeStream((message) => {
         this.#logsCollection!.push(message.trim())
         return true
       })
