@@ -34,6 +34,10 @@ export type LoggerConfig = Omit<LoggerOptions<any>, 'browser' | 'timestamp'> & {
   /**
    * Destination stream for log output
    */
+  destination?: DestinationStream
+  /**
+   * @deprecated Use `destination` instead
+   */
   desination?: DestinationStream
   /**
    * Timestamp configuration - can be a keyword, boolean, or function
